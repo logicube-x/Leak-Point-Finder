@@ -1,0 +1,96 @@
+{
+  "energy": [
+    {
+      "id": "rec_energy_01",
+      "action": "Industrial Heat Recovery & Boiler Economizer Installation",
+      "description": "Install high-efficiency condensing heat exchangers on flue gas exhausts to preheat boiler feedwater.",
+      "reason": "Directly mitigates primary energy fuel combustion by capturing 12-18% of waste thermal heat.",
+      "capital_level": "Medium ($25k-$150k)",
+      "implementation_difficulty": "Medium",
+      "circularity": "Direct Heat/Energy Reuse",
+      "abatement_percent": 22,
+      "cost_range": "$45,000 - $110,000",
+      "payback_years": "1.5 - 2.2 yrs"
+    },
+    {
+      "id": "rec_energy_02",
+      "action": "On-Site Solar PPA & VFD Variable Speed Motor Drives",
+      "description": "Deploy rooftop photovoltaic solar generation coupled with IE4 super-premium efficiency motor drives.",
+      "reason": "Reduces purchased grid electricity footprint and peak demand transmission tariffs.",
+      "capital_level": "High (>$150k)",
+      "implementation_difficulty": "Low",
+      "circularity": "Direct Heat/Energy Reuse",
+      "abatement_percent": 30,
+      "cost_range": "$120,000 - $280,000",
+      "payback_years": "2.8 - 3.6 yrs"
+    }
+  ],
+  "materials": [
+    {
+      "id": "rec_materials_01",
+      "action": "Low-Carbon Recycled Secondary Feedstock Substitution",
+      "description": "Substitute virgin polymer/ore feeds with certified post-consumer recycled or bio-based feedstock streams.",
+      "reason": "Curtains Scope 3 upstream embedded carbon without compromising product tensile or chemical specifications.",
+      "capital_level": "Low (<$25k)",
+      "implementation_difficulty": "Low",
+      "circularity": "Material Closed-Loop",
+      "abatement_percent": 25,
+      "cost_range": "$15,000 - $35,000",
+      "payback_years": "0.8 - 1.4 yrs"
+    }
+  ],
+  "process_utilities": [
+    {
+      "id": "rec_process_01",
+      "action": "Low-GWP Natural Refrigerant Retrofit & Ultrasonic Leak Monitoring",
+      "description": "Replace high-GWP synthetic HFC refrigerants with ammonia/CO2 cascade and install automated pressure loss alarms.",
+      "reason": "Fugitive refrigerant leakage carries extreme global warming potential (>3,900x CO2e).",
+      "capital_level": "Medium ($25k-$150k)",
+      "implementation_difficulty": "Medium",
+      "circularity": "Material Closed-Loop",
+      "abatement_percent": 40,
+      "cost_range": "$60,000 - $140,000",
+      "payback_years": "1.2 - 2.0 yrs"
+    },
+    {
+      "id": "rec_process_02",
+      "action": "Top Gas Pressure Recovery & Flaring Catalytic Oxidation",
+      "description": "Deploy expansion recovery turbines and enclosed low-NOx flare burners with flare gas compressor skids.",
+      "reason": "Recovers chemical off-gas pressure for captive electricity and eliminates uncombusted methane/VOC slip.",
+      "capital_level": "High (>$150k)",
+      "implementation_difficulty": "High",
+      "circularity": "Direct Heat/Energy Reuse",
+      "abatement_percent": 28,
+      "cost_range": "$220,000 - $550,000",
+      "payback_years": "2.4 - 3.8 yrs"
+    }
+  ],
+  "waste_circularity": [
+    {
+      "id": "rec_waste_01",
+      "action": "Anaerobic Digestion Biogas Generation & Byproduct Granulation",
+      "description": "Convert organic waste streams and industrial slags into captive biomethane steam and blended cementitious material.",
+      "reason": "Eliminates fugitive methane landfill degradation and creates circular byproduct revenue offsets.",
+      "capital_level": "Medium ($25k-$150k)",
+      "implementation_difficulty": "Medium",
+      "circularity": "High",
+      "abatement_percent": 20,
+      "cost_range": "$70,000 - $160,000",
+      "payback_years": "1.8 - 2.9 yrs"
+    }
+  ],
+  "transport": [
+    {
+      "id": "rec_transport_01",
+      "action": "Fleet Route Optimization & Electric Inter-Facility Shuttles",
+      "description": "Implement telematics route consolidation and electrify yard and regional distribution logistics.",
+      "reason": "Reduces diesel combustion intensity per tonne-kilometer transported.",
+      "capital_level": "Medium ($25k-$150k)",
+      "implementation_difficulty": "Low",
+      "circularity": "Minimal",
+      "abatement_percent": 18,
+      "cost_range": "$30,000 - $85,000",
+      "payback_years": "1.4 - 2.1 yrs"
+    }
+  ]
+}

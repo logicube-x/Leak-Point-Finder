@@ -1,0 +1,76 @@
+{
+  "industry": "textile",
+  "display_name": "Textile Manufacturing",
+  "sources": [
+    {
+      "id": "electricity",
+      "name": "Purchased Electricity",
+      "activity_field": "electricity_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "india_grid_electricity"
+    },
+    {
+      "id": "diesel",
+      "name": "Diesel",
+      "activity_field": "diesel_litres",
+      "unit": "litres",
+      "emission_factor_id": "diesel"
+    },
+    {
+      "id": "natural_gas",
+      "name": "Natural Gas",
+      "activity_field": "natural_gas_m3",
+      "unit": "m3",
+      "emission_factor_id": "natural_gas"
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "activity_field": "cotton_kg",
+      "unit": "kg",
+      "emission_factor_id": "cotton"
+    },
+    {
+      "id": "polyester",
+      "name": "Polyester / Synthetic Fibre",
+      "activity_field": "polyester_kg",
+      "unit": "kg",
+      "emission_factor_id": "polyester"
+    },
+    {
+      "id": "dyes_chemicals",
+      "name": "Reactive Dyes & Wet Process Auxiliaries",
+      "activity_field": "dyes_chemicals_kg",
+      "unit": "kg",
+      "emission_factor_id": "dyes_chemicals_combined"
+    },
+    {
+      "id": "water",
+      "name": "Process Water",
+      "activity_field": "process_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_water"
+    },
+    {
+      "id": "wastewater",
+      "name": "Wastewater",
+      "activity_field": "wastewater_m3",
+      "unit": "m3",
+      "emission_factor_id": "wastewater"
+    },
+    {
+      "id": "textile_waste",
+      "name": "Textile Waste",
+      "activity_field": "textile_waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "textile_waste"
+    },
+    {
+      "id": "transport",
+      "name": "Transportation",
+      "activity_field": "transport_tonne_km",
+      "unit": "tonne-km",
+      "emission_factor_id": "freight_transport"
+    }
+  ]
+}

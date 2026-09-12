@@ -1,0 +1,21 @@
+{
+  "industry_id": "steel",
+  "name": "Steel Manufacturing",
+  "default_unit": "tonnes crude steel",
+  "required_fields": ["annual_production", "coke_coal", "grid_electricity"],
+  "field_mapping": {
+    "annual_production": "production_volume",
+    "coke_coal": "coke_coal_tonnes",
+    "grid_electricity": "electricity_mwh",
+    "natural_gas": "natural_gas_km3",
+    "heavy_fuel_oil": "fuel_oil_kl",
+    "iron_ore_pellets": "iron_ore_tonnes",
+    "dri_hbi": "dri_tonnes",
+    "scrap_steel": "scrap_tonnes",
+    "limestone_flux": "limestone_tonnes",
+    "graphite_electrodes": "electrodes_tonnes",
+    "dust_sludge_waste": "dust_waste_tonnes",
+    "bulk_raw_freight": "inbound_tkm",
+    "finished_steel_freight": "outbound_tkm"
+  }
+}

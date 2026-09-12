@@ -1,0 +1,16 @@
+{
+  "industry_id": "cement",
+  "name": "Cement Manufacturing",
+  "default_unit": "tonnes Portland clinker",
+  "required_fields": ["annual_production", "kiln_coal_petcoke", "grid_electricity", "limestone_raw"],
+  "field_mapping": {
+    "annual_production": "production_volume",
+    "kiln_coal_petcoke": "kiln_coal_tonnes",
+    "grid_electricity": "electricity_mwh",
+    "alternative_refuse_fuel": "rdf_tonnes",
+    "limestone_raw": "limestone_raw_tonnes",
+    "gypsum_additives": "gypsum_tonnes",
+    "refractory_brick_wear": "refractory_tonnes",
+    "bulk_cement_dispatch": "outbound_tkm"
+  }
+}

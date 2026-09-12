@@ -1,0 +1,119 @@
+{
+  "industry": "steel",
+  "display_name": "Steel Manufacturing",
+
+  "sources": [
+    {
+      "id": "electricity",
+      "name": "Purchased Electricity",
+      "activity_field": "electricity_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "india_grid_electricity"
+    },
+    {
+      "id": "coal",
+      "name": "Coal / Coke",
+      "activity_field": "coal_kg",
+      "unit": "kg",
+      "emission_factor_id": "coal"
+    },
+    {
+      "id": "natural_gas",
+      "name": "Natural Gas",
+      "activity_field": "natural_gas_m3",
+      "unit": "m3",
+      "emission_factor_id": "natural_gas"
+    },
+    {
+      "id": "fuel",
+      "name": "Fuel Oil",
+      "activity_field": "fuel_oil_litres",
+      "unit": "litres",
+      "emission_factor_id": "fuel_oil"
+    },
+    {
+      "id": "iron_ore",
+      "name": "Iron Ore",
+      "activity_field": "iron_ore_kg",
+      "unit": "kg",
+      "emission_factor_id": "iron_ore"
+    },
+    {
+      "id": "dri",
+      "name": "Direct Reduced Iron / HBI",
+      "activity_field": "dri_kg",
+      "unit": "kg",
+      "emission_factor_id": "dri"
+    },
+    {
+      "id": "scrap",
+      "name": "Scrap Steel",
+      "activity_field": "scrap_steel_kg",
+      "unit": "kg",
+      "emission_factor_id": "scrap_steel"
+    },
+    {
+      "id": "limestone",
+      "name": "Limestone",
+      "activity_field": "limestone_kg",
+      "unit": "kg",
+      "emission_factor_id": "limestone"
+    },
+    {
+      "id": "oxygen",
+      "name": "Oxygen",
+      "activity_field": "oxygen_kg",
+      "unit": "kg",
+      "emission_factor_id": "oxygen"
+    },
+    {
+      "id": "electrodes",
+      "name": "Electrodes",
+      "activity_field": "electrodes_kg",
+      "unit": "kg",
+      "emission_factor_id": "electrodes"
+    },
+    {
+      "id": "alloying_materials",
+      "name": "Alloying Materials",
+      "activity_field": "alloying_materials_kg",
+      "unit": "kg",
+      "emission_factor_id": "alloying_materials"
+    },
+    {
+      "id": "process_gases",
+      "name": "Process Gases",
+      "activity_field": "process_gases_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_gases"
+    },
+    {
+      "id": "water",
+      "name": "Process Water",
+      "activity_field": "process_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_water"
+    },
+    {
+      "id": "slag",
+      "name": "Slag",
+      "activity_field": "slag_kg",
+      "unit": "kg",
+      "emission_factor_id": "slag"
+    },
+    {
+      "id": "dust_sludge",
+      "name": "Dust / Sludge",
+      "activity_field": "dust_sludge_kg",
+      "unit": "kg",
+      "emission_factor_id": "dust_sludge"
+    },
+    {
+      "id": "transport",
+      "name": "Transportation",
+      "activity_field": "transport_tonne_km",
+      "unit": "tonne-km",
+      "emission_factor_id": "freight_transport"
+    }
+  ]
+}

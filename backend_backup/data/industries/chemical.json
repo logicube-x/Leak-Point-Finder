@@ -1,0 +1,18 @@
+{
+  "industry_id": "chemical",
+  "name": "Chemical Manufacturing",
+  "default_unit": "tonnes chemical output",
+  "required_fields": ["annual_production", "natural_gas_reforming", "grid_electricity", "hydrocarbon_feedstock"],
+  "field_mapping": {
+    "annual_production": "production_volume",
+    "natural_gas_reforming": "natural_gas_km3",
+    "grid_electricity": "electricity_mwh",
+    "high_pressure_steam": "steam_tonnes",
+    "hydrocarbon_feedstock": "feedstock_tonnes",
+    "inorganic_reagents": "reagents_tonnes",
+    "precious_metal_catalysts": "catalysts_tonnes",
+    "process_flaring": "flaring_km3",
+    "hazardous_waste_incineration": "hazardous_waste_tonnes",
+    "chemical_iso_tanker_logistics": "outbound_tkm"
+  }
+}

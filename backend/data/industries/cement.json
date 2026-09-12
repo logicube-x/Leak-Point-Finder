@@ -1,0 +1,105 @@
+{
+  "industry": "cement",
+  "display_name": "Cement Manufacturing",
+
+  "sources": [
+    {
+      "id": "electricity",
+      "name": "Purchased Electricity",
+      "activity_field": "electricity_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "india_grid_electricity"
+    },
+    {
+      "id": "coal",
+      "name": "Coal / Petcoke",
+      "activity_field": "coal_kg",
+      "unit": "kg",
+      "emission_factor_id": "coal"
+    },
+    {
+      "id": "natural_gas",
+      "name": "Natural Gas",
+      "activity_field": "natural_gas_m3",
+      "unit": "m3",
+      "emission_factor_id": "natural_gas"
+    },
+    {
+      "id": "fuel_oil",
+      "name": "Fuel Oil",
+      "activity_field": "fuel_oil_litres",
+      "unit": "litres",
+      "emission_factor_id": "fuel_oil"
+    },
+    {
+      "id": "clinker",
+      "name": "Clinker Production",
+      "activity_field": "clinker_kg",
+      "unit": "kg",
+      "emission_factor_id": "clinker_process"
+    },
+    {
+      "id": "limestone",
+      "name": "Limestone",
+      "activity_field": "limestone_kg",
+      "unit": "kg",
+      "emission_factor_id": "limestone"
+    },
+    {
+      "id": "gypsum",
+      "name": "Gypsum",
+      "activity_field": "gypsum_kg",
+      "unit": "kg",
+      "emission_factor_id": "gypsum"
+    },
+    {
+      "id": "alternative_fuel",
+      "name": "Alternative Fuel",
+      "activity_field": "alternative_fuel_kg",
+      "unit": "kg",
+      "emission_factor_id": "alternative_fuel"
+    },
+    {
+      "id": "raw_meal",
+      "name": "Raw Meal",
+      "activity_field": "raw_meal_kg",
+      "unit": "kg",
+      "emission_factor_id": "raw_meal"
+    },
+    {
+      "id": "water",
+      "name": "Process Water",
+      "activity_field": "process_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_water"
+    },
+    {
+      "id": "dust",
+      "name": "Dust / Kiln Dust",
+      "activity_field": "dust_kg",
+      "unit": "kg",
+      "emission_factor_id": "cement_dust"
+    },
+    {
+      "id": "waste",
+      "name": "Industrial Waste",
+      "activity_field": "waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "industrial_waste"
+    },
+    {
+      "id": "transport",
+      "name": "Transportation",
+      "activity_field": "transport_tonne_km",
+      "unit": "tonne-km",
+      "emission_factor_id": "freight_transport"
+    },
+    {
+      "id": "production",
+      "name": "Cement Production",
+      "activity_field": "production_kg",
+      "unit": "kg",
+      "emission_factor_id": null
+    }
+  ]
+}

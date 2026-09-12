@@ -1,0 +1,21 @@
+{
+  "industry_id": "textile",
+  "name": "Textile Manufacturing",
+  "default_unit": "tonnes finished fabric",
+  "required_fields": ["annual_production", "grid_electricity"],
+  "field_mapping": {
+    "annual_production": "production_volume",
+    "grid_electricity": "electricity_mwh",
+    "natural_gas": "natural_gas_km3",
+    "diesel_fuel": "diesel_kl",
+    "polyester_fibre": "polyester_tonnes",
+    "raw_cotton": "cotton_tonnes",
+    "dyes_chemicals": "dyes_tonnes",
+    "process_water": "water_km3",
+    "compressed_air": "compressed_air_mwh",
+    "wastewater_volume": "effluent_km3",
+    "textile_waste_landfill": "waste_tonnes",
+    "inbound_logistics": "inbound_tkm",
+    "outbound_distribution": "outbound_tkm"
+  }
+}

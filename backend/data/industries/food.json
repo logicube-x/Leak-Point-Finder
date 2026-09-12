@@ -1,0 +1,126 @@
+{
+  "industry": "food",
+  "display_name": "Food Processing",
+
+  "sources": [
+    {
+      "id": "electricity",
+      "name": "Purchased Electricity",
+      "activity_field": "electricity_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "india_grid_electricity"
+    },
+    {
+      "id": "natural_gas",
+      "name": "Natural Gas",
+      "activity_field": "natural_gas_m3",
+      "unit": "m3",
+      "emission_factor_id": "natural_gas"
+    },
+    {
+      "id": "lpg",
+      "name": "LPG",
+      "activity_field": "lpg_kg",
+      "unit": "kg",
+      "emission_factor_id": "lpg"
+    },
+    {
+      "id": "diesel",
+      "name": "Diesel",
+      "activity_field": "diesel_litres",
+      "unit": "litres",
+      "emission_factor_id": "diesel"
+    },
+    {
+      "id": "steam",
+      "name": "Process Steam",
+      "activity_field": "steam_tonnes",
+      "unit": "tonnes",
+      "emission_factor_id": "steam"
+    },
+    {
+      "id": "refrigeration",
+      "name": "Refrigeration Energy",
+      "activity_field": "refrigeration_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "refrigeration_electricity"
+    },
+    {
+      "id": "refrigerant",
+      "name": "Refrigerant Leakage / Top-up",
+      "activity_field": "refrigerant_kg",
+      "unit": "kg",
+      "emission_factor_id": "refrigerant"
+    },
+    {
+      "id": "raw_food_material",
+      "name": "Raw Food Materials",
+      "activity_field": "raw_food_material_kg",
+      "unit": "kg",
+      "emission_factor_id": "raw_food_material"
+    },
+    {
+      "id": "water",
+      "name": "Process Water",
+      "activity_field": "process_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_water"
+    },
+    {
+      "id": "cleaning_water",
+      "name": "Cleaning / CIP Water",
+      "activity_field": "cleaning_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "cleaning_water"
+    },
+    {
+      "id": "cleaning_chemicals",
+      "name": "Cleaning Chemicals",
+      "activity_field": "cleaning_chemicals_kg",
+      "unit": "kg",
+      "emission_factor_id": "cleaning_chemicals"
+    },
+    {
+      "id": "packaging",
+      "name": "Packaging Material",
+      "activity_field": "packaging_kg",
+      "unit": "kg",
+      "emission_factor_id": "packaging"
+    },
+    {
+      "id": "food_waste",
+      "name": "Food Waste",
+      "activity_field": "food_waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "food_waste"
+    },
+    {
+      "id": "wastewater",
+      "name": "Wastewater",
+      "activity_field": "wastewater_m3",
+      "unit": "m3",
+      "emission_factor_id": "wastewater"
+    },
+    {
+      "id": "recovered_waste",
+      "name": "Recovered / Recycled Waste",
+      "activity_field": "recovered_waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "recovered_waste"
+    },
+    {
+      "id": "transport",
+      "name": "Transportation",
+      "activity_field": "transport_tonne_km",
+      "unit": "tonne-km",
+      "emission_factor_id": "freight_transport"
+    },
+    {
+      "id": "production",
+      "name": "Food Production",
+      "activity_field": "production_kg",
+      "unit": "kg",
+      "emission_factor_id": null
+    }
+  ]
+}

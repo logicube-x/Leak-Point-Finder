@@ -1,0 +1,112 @@
+{
+  "industry": "chemical",
+  "display_name": "Chemical Manufacturing",
+
+  "sources": [
+    {
+      "id": "electricity",
+      "name": "Purchased Electricity",
+      "activity_field": "electricity_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "india_grid_electricity"
+    },
+    {
+      "id": "natural_gas",
+      "name": "Natural Gas",
+      "activity_field": "natural_gas_m3",
+      "unit": "m3",
+      "emission_factor_id": "natural_gas"
+    },
+    {
+      "id": "coal",
+      "name": "Coal",
+      "activity_field": "coal_kg",
+      "unit": "kg",
+      "emission_factor_id": "coal"
+    },
+    {
+      "id": "fuel_oil",
+      "name": "Fuel Oil",
+      "activity_field": "fuel_oil_litres",
+      "unit": "litres",
+      "emission_factor_id": "fuel_oil"
+    },
+    {
+      "id": "raw_materials",
+      "name": "Chemical Raw Materials",
+      "activity_field": "raw_materials_kg",
+      "unit": "kg",
+      "emission_factor_id": "chemical_raw_materials"
+    },
+    {
+      "id": "solvents",
+      "name": "Solvents",
+      "activity_field": "solvents_kg",
+      "unit": "kg",
+      "emission_factor_id": "solvents"
+    },
+    {
+      "id": "process_steam",
+      "name": "Process Steam",
+      "activity_field": "steam_tonnes",
+      "unit": "tonnes",
+      "emission_factor_id": "steam"
+    },
+    {
+      "id": "process_gases",
+      "name": "Process Gases",
+      "activity_field": "process_gases_kg",
+      "unit": "kg",
+      "emission_factor_id": "process_gases"
+    },
+    {
+      "id": "refrigeration",
+      "name": "Refrigeration",
+      "activity_field": "refrigeration_kwh",
+      "unit": "kWh",
+      "emission_factor_id": "refrigeration_electricity"
+    },
+    {
+      "id": "process_water",
+      "name": "Process Water",
+      "activity_field": "process_water_m3",
+      "unit": "m3",
+      "emission_factor_id": "process_water"
+    },
+    {
+      "id": "wastewater",
+      "name": "Wastewater",
+      "activity_field": "wastewater_m3",
+      "unit": "m3",
+      "emission_factor_id": "wastewater"
+    },
+    {
+      "id": "hazardous_waste",
+      "name": "Hazardous Waste",
+      "activity_field": "hazardous_waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "hazardous_waste"
+    },
+    {
+      "id": "non_hazardous_waste",
+      "name": "Non-Hazardous Waste",
+      "activity_field": "non_hazardous_waste_kg",
+      "unit": "kg",
+      "emission_factor_id": "industrial_waste"
+    },
+    {
+      "id": "transport",
+      "name": "Transportation",
+      "activity_field": "transport_tonne_km",
+      "unit": "tonne-km",
+      "emission_factor_id": "freight_transport"
+    },
+    {
+      "id": "production",
+      "name": "Chemical Product Output",
+      "activity_field": "production_kg",
+      "unit": "kg",
+      "emission_factor_id": null
+    }
+  ]
+}

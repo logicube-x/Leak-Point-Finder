@@ -1,0 +1,680 @@
+{
+  "textile": {
+    "electricity": [
+      {
+        "id": "textile_energy_monitoring",
+        "action": "Energy monitoring",
+        "description": "Track electricity consumption by machine, process, or production area.",
+        "reason": "Helps identify inefficient equipment and unnecessary electricity use.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "textile_machine_scheduling",
+        "action": "Machine scheduling and optimization",
+        "description": "Optimize machine operating schedules and reduce idle running time.",
+        "reason": "Suitable when electricity is a major hotspot and equipment often runs without productive output.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "textile_vfd",
+        "action": "Variable Frequency Drives (VFDs)",
+        "description": "Use VFDs on suitable motors and variable-load equipment.",
+        "reason": "Can reduce electricity demand in motor-driven textile equipment.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_efficiency",
+        "action": "Energy-efficient machinery",
+        "description": "Replace inefficient equipment with higher-efficiency alternatives when replacement is justified.",
+        "reason": "Useful when existing machinery is a significant source of electricity consumption.",
+        "circularity": false,
+        "capital_level": "high",
+        "implementation_difficulty": "hard"
+      },
+      {
+        "id": "textile_renewable",
+        "action": "Renewable electricity",
+        "description": "Increase the share of electricity supplied from renewable sources.",
+        "reason": "Directly addresses electricity-related carbon impact.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_process_optimization",
+        "action": "Process optimization",
+        "description": "Optimize production parameters and operating practices to reduce unnecessary energy demand.",
+        "reason": "Useful when energy consumption is driven by inefficient process operation.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "polyester": [
+      {
+        "id": "textile_recycled_fibre",
+        "action": "Increase recycled fibre content",
+        "description": "Replace a portion of virgin polyester with suitable recycled fibre.",
+        "reason": "Reduces dependence on virgin synthetic material and supports circular material use.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_material_optimization",
+        "action": "Material-use optimization",
+        "description": "Reduce unnecessary fibre consumption through process and product optimization.",
+        "reason": "Reduces the quantity of material required for the same production output.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_fibre_recovery",
+        "action": "Textile fibre recovery",
+        "description": "Recover suitable textile waste for reuse or recycling into fibre feedstock.",
+        "reason": "Creates a circular loop and reduces dependence on new material inputs.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_supplier_takeback",
+        "action": "Supplier take-back program",
+        "description": "Work with suppliers or recycling partners to recover production scrap.",
+        "reason": "Helps create a controlled recovery pathway for textile material waste.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      }
+    ],
+
+    "cotton": [
+      {
+        "id": "textile_cotton_reuse",
+        "action": "Cotton waste reuse",
+        "description": "Recover and reuse suitable cotton production waste.",
+        "reason": "Reduces material losses and supports circular use of fibre resources.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "textile_recycled_cotton",
+        "action": "Increase recycled cotton content",
+        "description": "Use suitable recycled cotton fibre in products where specifications allow.",
+        "reason": "Reduces the need for additional virgin fibre inputs.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_cotton_process_efficiency",
+        "action": "Cotton process optimization",
+        "description": "Reduce material loss during cutting, processing, and finishing.",
+        "reason": "Addresses high material consumption by reducing avoidable losses.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "chemicals": [
+      {
+        "id": "textile_chemical_efficiency",
+        "action": "Chemical-use optimization",
+        "description": "Optimize chemical dosing and process recipes.",
+        "reason": "Reduces unnecessary chemical consumption while maintaining process quality.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_lower_impact_chemicals",
+        "action": "Lower-impact chemical alternatives",
+        "description": "Evaluate lower-impact chemicals or auxiliaries where technically suitable.",
+        "reason": "Can reduce the environmental burden associated with chemical inputs.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_chemical_recovery",
+        "action": "Chemical recovery or reuse",
+        "description": "Recover and reuse suitable process chemicals where technically feasible.",
+        "reason": "Reduces fresh chemical demand and supports resource efficiency.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "hard"
+      }
+    ],
+
+    "textile_waste": [
+      {
+        "id": "textile_waste_segregation",
+        "action": "Waste segregation",
+        "description": "Separate textile waste by fibre type and recovery potential.",
+        "reason": "Improves the quality and usability of material sent for recovery.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "textile_recycling_loop",
+        "action": "Textile recycling loop",
+        "description": "Send suitable textile waste back into a recycling or fibre-recovery pathway.",
+        "reason": "Turns production waste into a potential secondary material stream.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "textile_waste_supplier",
+        "action": "Waste recovery partnership",
+        "description": "Partner with recyclers or material recovery organizations for textile waste.",
+        "reason": "Provides a structured route for material recovery instead of disposal.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      }
+    ]
+  },
+
+  "steel": {
+    "electricity": [
+      {
+        "id": "steel_energy_monitoring",
+        "action": "Energy monitoring",
+        "description": "Monitor electricity consumption by furnace, mill, or major process area.",
+        "reason": "Helps locate high-consumption equipment and operating losses.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "steel_process_optimization",
+        "action": "Process optimization",
+        "description": "Optimize furnace operation and production scheduling.",
+        "reason": "Reduces avoidable electricity demand while maintaining production requirements.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "steel_vfd",
+        "action": "Variable Frequency Drives",
+        "description": "Apply VFDs to suitable motors and variable-load systems.",
+        "reason": "Can improve electrical efficiency for appropriate motor-driven equipment.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "steel_renewable",
+        "action": "Renewable electricity",
+        "description": "Increase renewable electricity sourcing where practical.",
+        "reason": "Directly addresses purchased-electricity carbon impact.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "coal": [
+      {
+        "id": "steel_fuel_efficiency",
+        "action": "Fuel-use efficiency improvement",
+        "description": "Optimize fuel and coke consumption per unit of steel produced.",
+        "reason": "Addresses a major thermal and process-related carbon hotspot.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "steel_process_gas_recovery",
+        "action": "Process gas recovery and reuse",
+        "description": "Recover usable process gases and reuse them where the plant configuration allows.",
+        "reason": "Reduces wasted energy and can lower fresh fuel demand.",
+        "circularity": true,
+        "capital_level": "high",
+        "implementation_difficulty": "hard"
+      },
+      {
+        "id": "steel_low_carbon_fuel",
+        "action": "Lower-carbon fuel substitution",
+        "description": "Evaluate technically suitable lower-carbon fuel or process alternatives.",
+        "reason": "Reduces dependence on high-carbon fossil fuel inputs.",
+        "circularity": false,
+        "capital_level": "high",
+        "implementation_difficulty": "hard"
+      }
+    ],
+
+    "scrap_steel": [
+      {
+        "id": "steel_scrap_increase",
+        "action": "Increase suitable scrap utilization",
+        "description": "Increase the share of suitable recycled steel scrap in the production route where technically feasible.",
+        "reason": "Supports circular material use and reduces dependence on virgin metallic inputs.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "steel_scrap_sorting",
+        "action": "Improved scrap sorting",
+        "description": "Improve segregation and quality control of scrap steel inputs.",
+        "reason": "Higher-quality scrap can improve material recovery and process consistency.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      }
+    ],
+
+    "raw_materials": [
+      {
+        "id": "steel_material_efficiency",
+        "action": "Raw-material optimization",
+        "description": "Reduce unnecessary raw-material losses and optimize material ratios.",
+        "reason": "Reduces upstream material demand and production losses.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "slag": [
+      {
+        "id": "steel_slag_reuse",
+        "action": "Slag reuse",
+        "description": "Use suitable steel slag in approved construction or industrial applications.",
+        "reason": "Turns an industrial by-product into a usable secondary resource.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ]
+  },
+
+  "food": {
+    "electricity": [
+      {
+        "id": "food_energy_monitoring",
+        "action": "Energy monitoring",
+        "description": "Monitor electricity consumption across processing, refrigeration, and utilities.",
+        "reason": "Helps identify the largest energy-consuming processes.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "food_process_optimization",
+        "action": "Process optimization",
+        "description": "Optimize processing cycles, operating schedules, and equipment loading.",
+        "reason": "Reduces unnecessary energy consumption.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "food_refrigeration_efficiency",
+        "action": "Refrigeration efficiency improvement",
+        "description": "Improve refrigeration-system efficiency through maintenance and optimized operation.",
+        "reason": "Useful when cooling systems are a major electricity consumer.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "food_renewable",
+        "action": "Renewable electricity",
+        "description": "Increase the share of renewable electricity used by the facility.",
+        "reason": "Addresses purchased-electricity carbon impact.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "refrigeration": [
+      {
+        "id": "food_refrigeration_maintenance",
+        "action": "Refrigeration maintenance",
+        "description": "Maintain compressors, heat exchangers, seals, controls, and refrigeration equipment.",
+        "reason": "Poorly maintained systems can require additional energy to deliver the same cooling.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "food_refrigerant_management",
+        "action": "Refrigerant leak management",
+        "description": "Detect and prevent refrigerant leaks and record refrigerant top-ups.",
+        "reason": "Reduces direct emissions associated with refrigerant loss.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "food_cooling_optimization",
+        "action": "Cooling-system optimization",
+        "description": "Optimize temperature set points and cooling schedules within product-safety requirements.",
+        "reason": "Can reduce unnecessary refrigeration energy consumption.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "raw_food_material": [
+      {
+        "id": "food_material_efficiency",
+        "action": "Raw-material yield optimization",
+        "description": "Reduce losses during preparation, processing, and handling of food materials.",
+        "reason": "Improves material efficiency and reduces avoidable upstream impacts.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "packaging": [
+      {
+        "id": "food_packaging_reduction",
+        "action": "Packaging reduction",
+        "description": "Reduce unnecessary packaging material while maintaining product protection.",
+        "reason": "Reduces material consumption and packaging-related impact.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "food_recycled_packaging",
+        "action": "Recycled packaging content",
+        "description": "Use suitable packaging with recycled material content where product requirements permit.",
+        "reason": "Reduces dependence on virgin packaging materials.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "food_waste": [
+      {
+        "id": "food_waste_reduction",
+        "action": "Food-loss reduction",
+        "description": "Reduce avoidable food loss through process control, inventory management, and yield improvement.",
+        "reason": "Prevention is preferable to treating waste after it is generated.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "food_waste_recovery",
+        "action": "Food-waste recovery",
+        "description": "Send suitable food waste to recovery pathways such as animal feed, composting, or anaerobic digestion where appropriate.",
+        "reason": "Creates a useful pathway for unavoidable food waste.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "food_waste_segregation",
+        "action": "Waste segregation",
+        "description": "Separate food waste from packaging and other waste streams.",
+        "reason": "Improves recovery opportunities and reduces contamination.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      }
+    ]
+  },
+
+  "cement": {
+    "electricity": [
+      {
+        "id": "cement_energy_monitoring",
+        "action": "Energy monitoring",
+        "description": "Monitor electricity use across grinding, conveying, fans, and other major equipment.",
+        "reason": "Helps identify high-consumption equipment and operational inefficiencies.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "cement_equipment_efficiency",
+        "action": "Energy-efficient equipment",
+        "description": "Improve efficiency of motors, fans, grinding systems, and other major electrical loads.",
+        "reason": "Targets electricity-intensive cement processes.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "cement_process_optimization",
+        "action": "Process optimization",
+        "description": "Optimize grinding and production conditions to reduce avoidable energy consumption.",
+        "reason": "Reduces energy demand while maintaining required product quality.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "cement_renewable",
+        "action": "Renewable electricity",
+        "description": "Increase renewable electricity sourcing where feasible.",
+        "reason": "Reduces purchased-electricity carbon impact.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "coal": [
+      {
+        "id": "cement_clinker_efficiency",
+        "action": "Clinker-process efficiency",
+        "description": "Improve thermal and process efficiency in clinker production.",
+        "reason": "Addresses a major energy and process-related carbon source.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "cement_alternative_fuel",
+        "action": "Alternative fuel substitution",
+        "description": "Increase technically suitable alternative-fuel use in place of conventional fossil fuel.",
+        "reason": "Reduces dependence on conventional high-carbon fuels where plant conditions allow.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "cement_fuel_optimization",
+        "action": "Fuel-use optimization",
+        "description": "Optimize kiln operation and thermal efficiency to reduce fuel demand per unit of clinker.",
+        "reason": "Targets fossil-fuel consumption in thermal processing.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "clinker": [
+      {
+        "id": "cement_clinker_substitution",
+        "action": "Clinker substitution",
+        "description": "Increase the use of suitable supplementary or alternative cementitious materials where standards permit.",
+        "reason": "Can reduce dependence on clinker-intensive production.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "cement_material_optimization",
+        "action": "Raw-material optimization",
+        "description": "Optimize raw-material preparation and processing to reduce avoidable losses.",
+        "reason": "Improves overall resource efficiency.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "limestone": [
+      {
+        "id": "cement_limestone_efficiency",
+        "action": "Limestone-use optimization",
+        "description": "Optimize limestone consumption and raw-material ratios.",
+        "reason": "Reduces avoidable raw-material consumption and process losses.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "waste": [
+      {
+        "id": "cement_waste_recovery",
+        "action": "Industrial waste co-processing",
+        "description": "Evaluate suitable waste streams for approved co-processing or recovery routes.",
+        "reason": "Can divert appropriate waste into productive process use.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ]
+  },
+
+  "chemical": {
+    "electricity": [
+      {
+        "id": "chemical_energy_monitoring",
+        "action": "Energy monitoring",
+        "description": "Monitor electricity use across reactors, pumps, compressors, and utilities.",
+        "reason": "Helps identify major electrical loads and inefficiencies.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "easy"
+      },
+      {
+        "id": "chemical_process_optimization",
+        "action": "Process optimization",
+        "description": "Optimize operating conditions and production scheduling.",
+        "reason": "Can reduce unnecessary electricity and utility demand.",
+        "circularity": false,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_vfd",
+        "action": "Variable Frequency Drives",
+        "description": "Apply VFDs to suitable pumps, fans, and motor-driven equipment.",
+        "reason": "Targets electrical efficiency in variable-load systems.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_renewable",
+        "action": "Renewable electricity",
+        "description": "Increase renewable electricity sourcing where appropriate.",
+        "reason": "Reduces electricity-related carbon impact.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "natural_gas": [
+      {
+        "id": "chemical_heat_efficiency",
+        "action": "Process-heat efficiency",
+        "description": "Improve thermal efficiency of boilers, heaters, furnaces, and heat-transfer systems.",
+        "reason": "Reduces natural-gas demand for process heat.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_heat_recovery",
+        "action": "Waste-heat recovery",
+        "description": "Recover useful heat from suitable process exhaust or hot streams.",
+        "reason": "Reduces the need for additional fuel input.",
+        "circularity": true,
+        "capital_level": "high",
+        "implementation_difficulty": "hard"
+      }
+    ],
+
+    "raw_materials": [
+      {
+        "id": "chemical_material_efficiency",
+        "action": "Raw-material optimization",
+        "description": "Optimize material ratios, yields, and production processes.",
+        "reason": "Reduces material losses and unnecessary feedstock consumption.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_feedstock_recovery",
+        "action": "Feedstock recovery and reuse",
+        "description": "Recover suitable process streams or reusable materials where technically feasible.",
+        "reason": "Reduces demand for fresh feedstocks and supports circular resource use.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "hard"
+      }
+    ],
+
+    "solvents": [
+      {
+        "id": "chemical_solvent_recovery",
+        "action": "Solvent recovery",
+        "description": "Recover and reuse suitable solvents from process streams.",
+        "reason": "Reduces fresh solvent demand and material losses.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_solvent_substitution",
+        "action": "Lower-impact solvent alternatives",
+        "description": "Evaluate technically suitable lower-impact solvent options.",
+        "reason": "Can reduce the environmental burden associated with solvent use.",
+        "circularity": false,
+        "capital_level": "medium",
+        "implementation_difficulty": "medium"
+      }
+    ],
+
+    "hazardous_waste": [
+      {
+        "id": "chemical_waste_reduction",
+        "action": "Hazardous-waste minimization",
+        "description": "Reduce waste generation through process optimization and better material control.",
+        "reason": "Waste prevention is preferable to disposal or treatment.",
+        "circularity": true,
+        "capital_level": "low",
+        "implementation_difficulty": "medium"
+      },
+      {
+        "id": "chemical_material_recovery",
+        "action": "Material recovery",
+        "description": "Recover suitable chemicals or materials from waste streams where technically and legally feasible.",
+        "reason": "Creates opportunities to reuse resources instead of treating them as waste.",
+        "circularity": true,
+        "capital_level": "medium",
+        "implementation_difficulty": "hard"
+      }
+    ]
+  }
+}

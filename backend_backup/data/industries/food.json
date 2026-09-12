@@ -1,0 +1,21 @@
+{
+  "industry_id": "food",
+  "name": "Food Processing",
+  "default_unit": "tonnes processed food",
+  "required_fields": ["annual_production", "natural_gas_boilers", "grid_electricity", "raw_agricultural_input"],
+  "field_mapping": {
+    "annual_production": "production_volume",
+    "natural_gas_boilers": "natural_gas_km3",
+    "grid_electricity": "electricity_mwh",
+    "lpg_cooking": "lpg_tonnes",
+    "diesel_generators": "diesel_kl",
+    "raw_agricultural_input": "agri_input_tonnes",
+    "packaging_plastic": "plastic_pkg_tonnes",
+    "packaging_corrugated": "corrugated_pkg_tonnes",
+    "refrigerant_leakage": "refrigerant_kg",
+    "cip_cleaning_water": "water_km3",
+    "organic_food_waste": "food_waste_tonnes",
+    "high_bod_wastewater": "wastewater_km3",
+    "temperature_controlled_transport": "reefer_tkm"
+  }
+}
