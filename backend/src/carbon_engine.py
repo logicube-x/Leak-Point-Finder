@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from src.country_db import get_country_info
+
 
 # Find the project root:
 # carbon-analyzer/
@@ -159,18 +161,34 @@ def calculate_emissions(
                 f"Invalid activity value for '{activity_field}'."
             ) from exc
 
-        factor = get_emission_factor(
-            emission_factors,
-            factor_id
-        )
+        country_id = factory_data.get("country") or factory_data.get("country_id") or "global_default"
+        country_info = get_country_info(str(country_id))
+
+        if "electricity" in factor_id.lower() or "grid" in factor_id.lower():
+            factor = country_info.get("grid_co2e_per_kwh", 0.475)
+        else:
+            factor = get_emission_factor(
+                emission_factors,
+                factor_id
+            )
 
         co2e = calculate_source_emission(
             activity_value,
             factor
         )
 
+        source_name = source["name"]
+        combined_str = (source_name + " " + source_id + " " + (factor_id or "")).lower()
+        if any(k in combined_str for k in ["electricity", "grid", "power", "utility"]):
+            source_scope = "Scope 2"
+        elif any(k in combined_str for k in ["cotton", "polyester", "dyes", "chemical", "water", "waste", "transport", "freight", "logistics", "feedstock", "materials"]):
+            source_scope = "Scope 3"
+        else:
+            source_scope = "Scope 1"
+
         breakdown[source_id] = {
-            "source": source["name"],
+            "source": source_name,
+            "scope": source_scope,
             "activity_value": activity_value,
             "unit": unit,
             "emission_factor_id": factor_id,

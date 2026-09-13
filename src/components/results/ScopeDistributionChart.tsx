@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import { ChartContainer } from "@/components/ui/ChartContainer";
 import { Badge } from "@/components/ui/Badge";
-import { formatEmissions, formatNumber } from "@/lib/utils";
+import { formatEmissions, formatNumber, formatPercent } from "@/lib/utils";
 
 export interface ScopeDistributionChartProps {
   scopeBreakdown: {
@@ -28,19 +28,19 @@ export function ScopeDistributionChart({
     {
       name: "Scope 1 (Direct Fuels & Calcination)",
       value: scopeBreakdown.scope1.tCO2e,
-      percentage: scopeBreakdown.scope1.percentage,
+      percentage: Number(scopeBreakdown.scope1.percentage).toFixed(1),
       color: "#2563eb", // Blue
     },
     {
       name: "Scope 2 (Purchased Electricity & Steam)",
       value: scopeBreakdown.scope2.tCO2e,
-      percentage: scopeBreakdown.scope2.percentage,
+      percentage: Number(scopeBreakdown.scope2.percentage).toFixed(1),
       color: "#9333ea", // Purple
     },
     {
       name: "Scope 3 (Upstream Feedstocks & Logistics)",
       value: scopeBreakdown.scope3.tCO2e,
-      percentage: scopeBreakdown.scope3.percentage,
+      percentage: Number(scopeBreakdown.scope3.percentage).toFixed(1),
       color: "#d97706", // Amber
     },
   ];
@@ -53,7 +53,7 @@ export function ScopeDistributionChart({
           <p className="font-bold text-slate-900">{item.name}</p>
           <div className="flex items-center justify-between gap-4 pt-1 font-mono">
             <span className="text-slate-600">{formatEmissions(item.value)}</span>
-            <span className="font-bold text-emerald-700">{item.percentage}%</span>
+            <span className="font-bold text-emerald-700">{formatPercent(item.percentage)}</span>
           </div>
         </div>
       );
@@ -89,7 +89,7 @@ export function ScopeDistributionChart({
             wrapperStyle={{ paddingTop: 12, fontSize: 11 }}
             formatter={(value, entry: any) => (
               <span className="text-slate-700 font-medium">
-                {value}: <strong className="font-mono">{entry.payload.percentage}%</strong>
+                {value}: <strong className="font-mono">{formatPercent(entry.payload.percentage)}</strong>
               </span>
             )}
           />
@@ -98,3 +98,4 @@ export function ScopeDistributionChart({
     </ChartContainer>
   );
 }
+

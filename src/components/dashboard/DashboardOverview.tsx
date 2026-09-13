@@ -21,7 +21,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { HistoricalAssessment, IndustryType } from "@/types/assessment";
-import { formatEmissions, formatNumber } from "@/lib/utils";
+import { formatEmissions, formatNumber, formatPercent } from "@/lib/utils";
+
 
 export interface DashboardOverviewProps {
   onStartAssessment: (industry?: IndustryType) => void;
@@ -301,9 +302,10 @@ export function DashboardOverview({
                       </td>
                       <td className="py-2.5 px-3">
                         <Badge variant="danger" size="sm">
-                          {item.primaryHotspotName} ({item.primaryHotspotPercentage}%)
+                          {item.primaryHotspotName} ({formatPercent(item.primaryHotspotPercentage)})
                         </Badge>
                       </td>
+
                       <td className="py-2.5 px-3 text-right">
                         <span className="font-mono font-medium text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                           {item.confidenceScore}%

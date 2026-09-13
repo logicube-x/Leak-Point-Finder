@@ -30,3 +30,9 @@ export function formatCurrency(amount: number): string {
     maximumFractionDigits: 0,
   }).format(amount);
 }
+
+export function formatPercent(pct: number, decimals: number = 1): string {
+  if (pct === undefined || pct === null || isNaN(pct)) return "0%";
+  return `${Number(pct).toFixed(decimals)}%`;
+}
+

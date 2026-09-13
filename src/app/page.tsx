@@ -57,6 +57,7 @@ export default function HomePage() {
       });
 
       const res = await assessmentService.analyzeAssessment({
+        countryId: "india",
         facilityName: item.facilityName,
         facilityLocation: "Industrial Facility Regional Hub",
         reportingPeriod: item.reportingPeriod,
@@ -65,6 +66,7 @@ export default function HomePage() {
         productionUnit: INDUSTRIES_METADATA[item.industry].defaultUnit,
         fields,
       });
+
 
       setActiveResult(res);
       setCurrentView("results");

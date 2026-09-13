@@ -25,6 +25,23 @@ export type EmissionCategory =
   | 'waste_circularity' 
   | 'transport';
 
+export interface CountryInfo {
+  id: string;
+  name: string;
+  region: string;
+  currency_code: string;
+  currency_symbol: string;
+  usd_exchange_rate: number;
+  grid_co2e_per_kwh: number;
+  grid_tariff_usd_per_kwh: number;
+  natural_gas_usd_per_m3: number;
+  diesel_usd_per_litre: number;
+  coal_usd_per_kg: number;
+  capex_regional_multiplier: number;
+  carbon_tax_usd_per_tco2e: number;
+  flag_emoji: string;
+}
+
 export interface FormFieldDef {
   key: string;
   label: string;
@@ -36,10 +53,11 @@ export interface FormFieldDef {
   min?: number;
   defaultValue?: number;
   scope: EmissionScope;
-  emissionFactorKgPerUnit: number; // For transparent calculation model
+  emissionFactorKgPerUnit: number;
 }
 
 export interface FactoryAssessmentInput {
+  countryId: string;
   facilityName: string;
   facilityLocation: string;
   reportingPeriod: string;
@@ -57,12 +75,12 @@ export interface EmissionSource {
   category: EmissionCategory;
   categoryLabel: string;
   scope: EmissionScope;
-  value: number; // original input value
+  value: number;
   unit: string;
   tCO2e: number;
   percentage: number;
   isHotspot: boolean;
-  intensityPerUnit: number; // e.g. kg CO2e / unit product
+  intensityPerUnit: number;
 }
 
 export interface Hotspot {
@@ -74,7 +92,7 @@ export interface Hotspot {
   percentage: number;
   severity: 'Critical' | 'High' | 'Moderate';
   keyDriver: string;
-  benchmarkComparison: string; // e.g., "24% higher than industry median"
+  benchmarkComparison: string;
 }
 
 export type ImplementationDifficulty = 'Low' | 'Medium' | 'High';
@@ -88,8 +106,28 @@ export interface ImpactEstimate {
   potentialCo2ReductionPercent: number;
   potentialCo2ReductionTons: number;
   annualSavingsUSD: number;
+  annualSavingsLocal?: number;
   paybackPeriodYears: string;
-  roiLevel: 'High' | 'Medium' | 'Strategic / Compliance';
+  roiLevel: 'High' | 'Medium' | 'Strategic / Compliance' | 'Strategic';
+}
+
+export interface FinancialDetails {
+  capex_usd: number;
+  capex_local: number;
+  opex_annual_usd: number;
+  opex_annual_local: number;
+  annual_savings_usd: number;
+  annual_savings_local: number;
+  potential_co2e_reduction_tco2e: number;
+  potential_co2e_reduction_percent: number;
+  payback_period_years: string;
+  payback_years_numeric: number;
+  roi_percent: number;
+  currency_symbol: string;
+  currency_code: string;
+  tier: string;
+  difficulty: string;
+  capital_level: string;
 }
 
 export interface Recommendation {
@@ -102,11 +140,42 @@ export interface Recommendation {
   capitalLevel: CapitalLevel;
   circularity: CircularityBenefit;
   impact: ImpactEstimate;
-  tier: 'Quick Win' | 'Medium-Term Modernization' | 'Deep Decarbonization';
+  financials?: FinancialDetails;
+  tier: 'Quick Win' | 'Medium-Term Modernization' | 'Deep Decarbonization' | 'Recommended';
+}
+
+export interface ScenarioMetrics {
+  name: string;
+  description: string;
+  action_count: number;
+  actions: string[];
+  total_capex_usd: number;
+  total_capex_local: number;
+  total_opex_annual_usd: number;
+  total_annual_savings_usd: number;
+  total_annual_savings_local: number;
+  co2e_reduction_tco2e: number;
+  co2e_reduction_percentage: number;
+  remaining_emissions_tco2e: number;
+  payback_years: string;
+  currency_symbol: string;
+}
+
+export interface ScenarioComparison {
+  basic: ScenarioMetrics;
+  balanced: ScenarioMetrics;
+  maximum_reduction: ScenarioMetrics;
+}
+
+export interface LLMNarrative {
+  executive_summary: string;
+  cause_analysis: string;
+  methodology_notes: string;
+  risk_guidance: string;
 }
 
 export interface ConfidenceMetrics {
-  score: number; // e.g. 92
+  score: number;
   level: 'High' | 'Medium' | 'Preliminary';
   missingDataPenalty: number;
   verifiedPointsCount: number;
@@ -116,6 +185,7 @@ export interface ConfidenceMetrics {
 export interface AssessmentResult {
   id: string;
   createdAt: string;
+  country: CountryInfo;
   facilityName: string;
   facilityLocation: string;
   reportingPeriod: string;
@@ -124,7 +194,7 @@ export interface AssessmentResult {
   total_co2e: number;
   productionVolume: number;
   productionUnit: string;
-  carbonIntensity: number; // tCO2e per unit of production
+  carbonIntensity: number;
   primary_hotspot: Hotspot;
   secondary_hotspot: Hotspot;
   confidence: ConfidenceMetrics;
@@ -141,6 +211,8 @@ export interface AssessmentResult {
     percentage: number;
   }[];
   recommendations: Recommendation[];
+  scenarios: ScenarioComparison;
+  llm_narrative: LLMNarrative;
   rawInputs: FactoryAssessmentInput;
 }
 
@@ -157,5 +229,7 @@ export interface HistoricalAssessment {
   secondaryHotspotName: string;
   confidenceScore: number;
   createdAt: string;
-  reductionVsPrevious?: number; // percentage change vs previous period
+  countryName?: string;
+  currencySymbol?: string;
+  reductionVsPrevious?: number;
 }

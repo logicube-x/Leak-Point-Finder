@@ -14,7 +14,7 @@ import {
 import { EmissionSource } from "@/types/assessment";
 import { ChartContainer } from "@/components/ui/ChartContainer";
 import { Badge } from "@/components/ui/Badge";
-import { formatEmissions, formatNumber } from "@/lib/utils";
+import { formatEmissions, formatNumber, formatPercent } from "@/lib/utils";
 
 export interface EmissionsBreakdownChartProps {
   sources: EmissionSource[];
@@ -26,7 +26,7 @@ export function EmissionsBreakdownChart({ sources }: EmissionsBreakdownChartProp
     name: s.name.length > 22 ? `${s.name.substring(0, 20)}...` : s.name,
     fullName: s.name,
     tCO2e: s.tCO2e,
-    percentage: s.percentage,
+    percentage: Number(s.percentage).toFixed(1),
     scope: s.scope,
     categoryLabel: s.categoryLabel,
     isHotspot: s.isHotspot,
@@ -55,13 +55,14 @@ export function EmissionsBreakdownChart({ sources }: EmissionsBreakdownChartProp
           </div>
           <div className="flex items-center justify-between gap-4 pt-1.5 border-t border-slate-100 font-mono">
             <span className="font-bold text-slate-900">{formatEmissions(data.tCO2e)}</span>
-            <span className="font-extrabold text-emerald-700">{data.percentage}%</span>
+            <span className="font-extrabold text-emerald-700">{formatPercent(data.percentage)}</span>
           </div>
         </div>
       );
     }
     return null;
   };
+
 
   return (
     <ChartContainer
@@ -74,7 +75,7 @@ export function EmissionsBreakdownChart({ sources }: EmissionsBreakdownChartProp
         <BarChart
           data={chartData}
           layout="vertical"
-          margin={{ top: 10, right: 30, left: 40, bottom: 5 }}
+          margin={{ top: 10, right: 30, left: 10, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
           <XAxis
@@ -87,7 +88,7 @@ export function EmissionsBreakdownChart({ sources }: EmissionsBreakdownChartProp
             type="category"
             dataKey="name"
             tick={{ fontSize: 11, fill: "#334155" }}
-            width={140}
+            width={160}
           />
           <Tooltip content={<CustomTooltip />} />
           <Bar dataKey="tCO2e" radius={[0, 4, 4, 0]}>

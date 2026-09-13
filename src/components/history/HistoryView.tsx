@@ -33,7 +33,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ChartContainer } from "@/components/ui/ChartContainer";
-import { formatEmissions, formatNumber } from "@/lib/utils";
+import { formatEmissions, formatNumber, formatPercent } from "@/lib/utils";
+
 
 export interface HistoryViewProps {
   history: HistoricalAssessment[];
@@ -233,9 +234,10 @@ export function HistoryView({
                     </td>
                     <td className="py-3 px-4">
                       <Badge variant="danger" size="sm">
-                        {item.primaryHotspotName} ({item.primaryHotspotPercentage}%)
+                        {item.primaryHotspotName} ({formatPercent(item.primaryHotspotPercentage)})
                       </Badge>
                     </td>
+
                     <td className="py-3 px-4 text-right">
                       <span className="font-mono text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                         {item.confidenceScore}%

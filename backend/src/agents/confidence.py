@@ -66,18 +66,19 @@ def calculate_confidence(
 
     # Never label data with validation errors as high confidence.
     if errors:
-        if score >= 60:
-            level = "medium"
+        if score >= 75:
+            level = "Medium"
         else:
-            level = "low"
+            level = "Preliminary"
 
     else:
         if score >= 80:
-            level = "high"
+            level = "High"
         elif score >= 60:
-            level = "medium"
+            level = "Medium"
         else:
-            level = "low"
+            level = "Preliminary"
+
 
     return {
         "score": round(score, 2),
