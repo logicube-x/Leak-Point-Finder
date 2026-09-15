@@ -1,158 +1,826 @@
-🌱 Industrial Emission Leak-Point Detector & Circular Alternative Recommender
+🌱 Industrial Carbon Hotspot Intelligence System
 
-An AI-powered industrial carbon intelligence platform that helps small and medium industries identify where their carbon footprint originates, discover circular alternatives, and understand the cost and CO₂ savings of taking action.
+AI-Powered Industrial Emission Hotspot Detection & Circular Alternative Recommendation Platform
 
-Built for the HackOut 2026 — Circular Carbon Ecosystem problem statement.
+An intelligent industrial carbon assessment platform that helps factories understand where their emissions are coming from, which sources are the biggest carbon hotspots, and what practical circular alternatives can be considered to reduce those emissions.
 
-🎯 PROBLEM STATEMENT
+🚀 How to Run the Project
 
-Industrial Emission Leak-Point Detector & Circular Alternative Recommender
+Follow these steps in order.
 
-Small and medium industries often do not know exactly where their carbon footprint originates or what circular alternatives are available.
+1. Clone the Repository
 
-Factories generate data from many different activities:
+git clone https://github.com/logicube-x/Leak-Point-Finder.git
+cd Leak-Point-Finder
 
-Energy consumption
+2. Install Frontend Dependencies
 
-Fuel usage
+From the project root:
+
+npm install
+
+3. Start the Frontend
+
+Run:
+
+npm run dev
+
+The frontend will be available at:
+
+http://localhost:3000
+
+Keep this terminal running.
+
+4. Open a Second Terminal
+
+Open another terminal and go to the backend:
+
+cd backend
+
+5. Create a Python Virtual Environment
+
+macOS / Linux
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+Windows
+
+python -m venv .venv
+.venv\Scripts\activate
+
+6. Install Backend Dependencies
+
+If requirements.txt is available:
+
+pip install -r requirements.txt
+
+Otherwise, install the required API packages directly:
+
+pip install fastapi uvicorn
+
+7. Start the Backend
+
+From inside the backend directory:
+
+uvicorn src.main:app --reload --port 8000
+
+The backend API will run at:
+
+http://127.0.0.1:8000
+
+8. Check Backend Health
+
+Open:
+
+http://127.0.0.1:8000/health
+
+You can also open the interactive API documentation:
+
+http://127.0.0.1:8000/docs
+
+▶️ Complete Run Setup
+
+You should have two terminals running.
+
+Terminal 1 — Frontend
+
+npm run dev
+
+Open:
+
+http://localhost:3000
+
+Terminal 2 — Backend
+
+cd backend
+source .venv/bin/activate
+uvicorn src.main:app --reload --port 8000
+
+On Windows, activate the environment with:
+
+.venv\Scripts\activate
+
+Then open:
+
+http://localhost:3000
+
+The frontend provides the factory assessment interface and the backend provides the carbon intelligence and analysis API.
+
+🌍 Project Description
+
+Industrial factories generate carbon emissions from many different activities such as:
+
+Electricity consumption
+
+Natural gas and diesel
 
 Raw materials
 
-Production processes
+Synthetic materials
+
+Industrial chemicals
+
+Process utilities
 
 Water consumption
 
-Waste streams
+Wastewater
 
-Transportation and logistics
+Industrial waste
 
-However, raw operational data by itself does not tell a factory:
+Transportation
 
-Which activity is responsible for the largest share of emissions?
+Upstream supply-chain activities
 
-Even after the major emission source is identified, another important question remains:
+Knowing the total carbon footprint is useful, but it does not answer the most important operational question:
 
-What practical circular intervention should the factory implement, how much could it cost, and how much CO₂ could it save?
+Where is the biggest emission hotspot in the factory?
 
-This project solves that problem by providing a complete intelligence pipeline:
+Our system is designed to answer that question and then move one step further:
 
-FACTORY DATA
+What practical circular action can be considered to address that hotspot?
+
+The platform converts industrial operational data into a structured carbon intelligence assessment.
+
+The overall flow is:
+
+Factory Data
      ↓
-DATA VALIDATION
+Data Validation
      ↓
-CARBON CALCULATION
+Field Mapping
      ↓
-EMISSION HOTSPOTS
+Unit Normalization
      ↓
-CIRCULAR ALTERNATIVES
+Carbon Calculation
      ↓
-COST + CO₂ SAVINGS
+Emission Breakdown
      ↓
-ACTIONABLE DECISION
+Hotspot Detection
+     ↓
+Circular Recommendations
+     ↓
+Cost & Impact Information
+     ↓
+Actionable Carbon Intelligence
 
-The system is designed for:
+🎯 Problem Statement
 
-SMEs
+Many industrial facilities can collect operational data but do not have a simple system that connects this data to actionable carbon-reduction decisions.
 
-Factory operators
+A conventional carbon assessment may provide:
 
-Sustainability consultants
+Total Emissions = X tCO₂e
 
-Industry regulators
+But factory operators also need to know:
 
-The goal is to make carbon emissions visible, understandable, and actionable for smaller industrial businesses.
+Which source causes the most emissions?
+Why is it a hotspot?
+What should we address first?
+What circular alternative could help?
+What could be the potential impact?
 
-💡 OUR SOLUTION
+This project addresses that gap by combining industrial data processing, carbon accounting, hotspot detection and circular recommendation logic into one platform.
 
-The platform allows a business to enter its industrial process data.
+💡 Our Solution
 
-The system then automatically:
+The Industrial Carbon Hotspot Intelligence System provides an end-to-end workflow for industrial carbon assessment.
 
-Maps the entered data into a standardized format.
+A user selects an industry and enters operational information.
 
-Normalizes different measurement units.
+The system then:
 
-Validates the data for quality and completeness.
+Validates the submitted data.
 
-Calculates source-level CO₂e emissions.
+Maps different input names into standardized fields.
 
-Identifies the largest emission contributors.
+Normalizes units.
 
-Detects primary and secondary carbon hotspots.
+Calculates emissions using configured emission factors.
 
-Recommends circular interventions relevant to the industry and hotspot.
+Breaks emissions down by source.
 
-Estimates potential CO₂ reduction.
+Calculates Scope 1, Scope 2 and Scope 3 contributions where configured.
 
-Estimates implementation cost, savings, and payback.
+Ranks emission sources by their actual calculated contribution.
 
-Builds practical decarbonization pathways.
+Identifies the primary and secondary hotspots.
 
-Presents the results through an interactive dashboard.
+Generates recommendations related to the detected hotspots.
 
-Instead of simply reporting:
+Provides impact-oriented information for potential interventions.
 
-YOUR FACTORY EMITS X TONNES CO₂e
+The objective is to move from:
 
-the platform answers:
+Carbon Accounting
 
-WHERE is the carbon coming from?
-          ↓
-WHY is that source significant?
-          ↓
-WHAT circular alternative can reduce it?
-          ↓
-HOW MUCH CO₂ could be saved?
-          ↓
-WHAT could it cost?
-          ↓
-HOW FAST could it pay back?
+to:
 
-🚀 PART 1 — HOW TO RUN THE PROJECT
+Carbon Intelligence
++
+Actionable Recommendations
 
-1. Prerequisites
+🧠 System Architecture
 
-Install:
+                    ┌─────────────────────┐
+                    │   Factory User      │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │      Frontend       │
+                    │ Next.js + React + TS│
+                    └──────────┬──────────┘
+                               │
+                         POST /api/analyze
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     Data Agent      │
+                    ├─────────────────────┤
+                    │ Field Mapping       │
+                    │ Unit Normalization  │
+                    │ Validation          │
+                    │ Confidence          │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    Carbon Engine    │
+                    ├─────────────────────┤
+                    │ Emission Factors    │
+                    │ Source Calculations │
+                    │ Scope Calculations  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Hotspot Detector   │
+                    ├─────────────────────┤
+                    │ Source Ranking      │
+                    │ Contribution %      │
+                    │ Primary Hotspot     │
+                    │ Secondary Hotspot   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Recommendation      │
+                    │ Engine              │
+                    ├─────────────────────┤
+                    │ Industry Matching   │
+                    │ Hotspot Matching    │
+                    │ Feasibility         │
+                    │ Circularity         │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │     Final Result    │
+                    │ Carbon + Hotspots   │
+                    │ + Recommendations   │
+                    └─────────────────────┘
 
-Requirement
+🔄 Core Intelligence Pipeline
 
-Recommended
+1. Data Agent
 
-Node.js
+The Data Agent prepares raw industrial data before carbon calculations are performed.
 
-20+
+It performs:
 
-npm
+Field Mapping
 
-Comes with Node.js
+Different users may describe the same industrial activity using different field names.
+
+For example:
+
+Grid Electricity
+Electricity Consumption
+Purchased Electricity
+Grid Power
+
+can be mapped to a common internal representation such as:
+
+electricity_kwh
+
+This allows the carbon engine to work with standardized fields.
+
+Unit Normalization
+
+Industrial data can be entered using different units such as:
+
+kWh
+MWh
+kg
+tonnes
+litres
+kL
+m³
+tonne-km
+
+The normalization layer converts supported values into the standard units expected by the backend calculation system.
+
+Validation
+
+The validator checks whether the submitted data is appropriate for the selected industrial sector.
+
+It can identify:
+
+Missing fields
+
+Invalid values
+
+Abnormal values
+
+Incomplete datasets
+
+Industry-specific data issues
+
+Confidence
+
+The Data Agent produces a confidence assessment based on the quality and completeness of the submitted information.
+
+This helps communicate whether the analysis is:
+
+High Confidence
+Medium Confidence
+Preliminary
+
+rather than presenting every result as equally reliable.
+
+⚙️ Carbon Engine
+
+The Carbon Engine performs the core emission calculations.
+
+The basic calculation is:
+
+CO₂e = Activity Data × Emission Factor
+
+For example:
+
+Electricity Consumption
+        ×
+Electricity Emission Factor
+        =
+Electricity CO₂e
+
+The same principle is applied to configured emission sources.
+
+The calculated source emissions are then aggregated:
+
+Source 1
++
+Source 2
++
+Source 3
++
+Source 4
++
+...
+=
+Total Facility CO₂e
+
+Emission factors are stored in a separate data file so that calculation logic and factor data remain separated.
+
+🌡️ Scope-Based Analysis
+
+The system can organize configured emission sources into:
+
+Scope 1
+
+Direct emissions associated with sources controlled by the facility.
+
+Examples include:
+
+Diesel
+
+Natural gas
+
+Direct fuel combustion
+
+Configured process emissions
+
+Scope 2
+
+Indirect emissions associated with purchased energy.
+
+Example:
+
+Purchased grid electricity
+
+Scope 3
+
+Other indirect emissions occurring across the value chain.
+
+Examples can include:
+
+Raw materials
+
+Synthetic fibres
+
+Chemicals
+
+Transportation
+
+Waste
+
+Upstream activities
+
+The exact sources depend on the selected industry configuration.
+
+🔥 Hotspot Detection
+
+The most important part of the system is identifying the actual emission hotspots.
+
+The system does not simply assume that electricity, fuel or another source is always the biggest hotspot.
+
+Instead, it calculates every configured source and ranks them according to their actual contribution.
+
+The logic is:
+
+Activity Data
+     ↓
+Emission Calculation
+     ↓
+Source CO₂e
+     ↓
+Contribution %
+     ↓
+Sort Sources
+     ↓
+Primary Hotspot
+     ↓
+Secondary Hotspot
+
+The contribution percentage is calculated as:
+
+Contribution %
+=
+Source CO₂e / Total CO₂e × 100
+
+For example:
+
+Electricity      → 42%
+Polyester        → 25%
+Natural Gas      → 13%
+Diesel           → 8%
+Other Sources    → 12%
+
+The resulting hotspots are:
+
+Primary Hotspot   → Electricity
+Secondary Hotspot → Polyester
+
+If the input data changes, the hotspot ranking can also change.
+
+♻️ Recommendation Engine
+
+After identifying the hotspot, the system moves from:
+
+Where is the problem?
+
+to:
+
+What can we do about it?
+
+The Recommendation Engine considers:
+
+Selected industry
+
+Detected hotspot
+
+Emission source
+
+Circularity opportunities
+
+Feasibility
+
+Implementation difficulty
+
+Capital requirement
+
+Recommendations are generated from a structured recommendation knowledge base.
+
+🔁 Circular Carbon Approach
+
+The project follows the idea of a Circular Carbon Ecosystem.
+
+Carbon reduction is not treated only as an electricity or fuel problem.
+
+The platform also considers opportunities related to:
+
+Energy
+
+Energy efficiency
+
+Renewable electricity
+
+Process optimization
+
+Heat recovery
+
+Materials
+
+Lower-carbon materials
+
+Recycled materials
+
+Material substitution
+
+Supplier improvements
+
+Water
+
+Water recovery
+
+Closed-loop systems
+
+Process-water optimization
+
+Waste
+
+Waste reduction
+
+Recycling
+
+Recovery
+
+Reuse
+
+Circular material pathways
+
+Logistics
+
+Transport optimization
+
+Lower-carbon logistics
+
+Supply-chain improvements
+
+The goal is to connect emission hotspots with practical circular interventions.
+
+💰 Cost & Impact
+
+A recommendation becomes more useful when decision-makers can understand its potential implementation and impact.
+
+The project architecture supports recommendation information such as:
+
+Estimated cost
+
+Potential CO₂ reduction
+
+Potential savings
+
+Payback period
+
+Implementation difficulty
+
+Capital requirement
+
+Circularity pathway
+
+These values should be treated as prototype estimates where applicable and should be validated against real project-specific data before financial or regulatory decisions.
+
+🏭 Supported Industries
+
+The current architecture supports five major industrial categories.
+
+🧵 Textile Manufacturing
+
+Typical areas include:
+
+Purchased electricity
+
+Natural gas
+
+Diesel
+
+Cotton
+
+Polyester / synthetic fibres
+
+Dyes and chemicals
+
+Process water
+
+Wastewater
+
+Textile waste
+
+Transportation
+
+⚙️ Steel Manufacturing
+
+Typical areas include:
+
+Metallurgical fuels
+
+Coke / coal
+
+Process inputs
+
+Electricity
+
+Steel production
+
+Transportation
+
+🍱 Food Processing
+
+Typical areas include:
+
+Thermal processing
+
+Energy
+
+Refrigeration
+
+Packaging
+
+Process operations
+
+Waste
+
+🧱 Cement Manufacturing
+
+Typical areas include:
+
+Clinker production
+
+Kiln fuels
+
+Calcination
+
+Electricity
+
+Grinding
+
+Alternative fuels
+
+🧪 Chemical Manufacturing
+
+Typical areas include:
+
+Chemical feedstocks
+
+Process energy
+
+Steam
+
+Solvents
+
+Flaring
+
+Transportation
+
+📊 Assessment Results
+
+The platform can return information including:
+
+Total Carbon Footprint
+
+Total CO₂e
+
+Emission Breakdown
+
+A source-by-source view of calculated emissions.
+
+Example:
+
+Purchased Electricity
+Natural Gas
+Diesel
+Polyester
+Cotton
+Chemicals
+Process Water
+Wastewater
+Textile Waste
+Transportation
+
+Scope Breakdown
+
+Scope 1
+Scope 2
+Scope 3
+
+Primary Hotspot
+
+The highest-contributing configured emission source.
+
+Secondary Hotspot
+
+The second-highest-contributing configured emission source.
+
+Confidence
+
+An indication of the quality and completeness of the submitted dataset.
+
+Recommendations
+
+Actions connected to the detected hotspots and selected industry.
+
+🖥️ Frontend
+
+The frontend is built with:
+
+Next.js
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Recharts
+
+Lucide React
+
+The frontend provides the user-facing industrial assessment experience.
+
+The typical workflow is:
+
+New Assessment
+      ↓
+Select Industry
+      ↓
+Enter Factory Information
+      ↓
+Enter Operational Data
+      ↓
+Submit Assessment
+      ↓
+Backend Analysis
+      ↓
+Carbon Results
+      ↓
+Hotspot Results
+      ↓
+Recommendations
+
+🔌 Backend API
+
+The backend is built using:
 
 Python
 
-3.10+
+FastAPI
 
-pip
+Uvicorn
 
-Comes with Python
+Health Endpoint
 
-Git
+GET /health
 
-Latest
+Used to verify that the API is running.
 
-Browser
+Analysis Endpoint
 
-Chrome / Edge / Brave / Safari
+POST /api/analyze
 
-Optional:
+This endpoint receives factory assessment information and executes the backend intelligence pipeline.
 
-Gemini API key for enhanced AI-generated narrative/reporting.
+The pipeline includes:
 
-The core carbon calculations do not depend on Gemini.
+Data Agent
+     ↓
+Carbon Analyzer
+     ↓
+Hotspot Detector
+     ↓
+Recommendation Engine
 
-2. Project Structure
+🧪 Example API Request
 
-carbon-hotspot-intelligence/
+Example textile assessment:
+
+{
+  "industry": "textile",
+  "annual_production": 12000,
+  "operating_hours": 7200,
+  "grid_electricity": 24000,
+  "natural_gas": 1800,
+  "diesel_fuel": 120,
+  "polyester_fibre": 5500,
+  "raw_cotton": 7000,
+  "dyes_chemicals": 450,
+  "process_water": 950,
+  "wastewater_volume": 820,
+  "textile_waste_landfill": 620,
+  "inbound_logistics": 240,
+  "outbound_distribution": 380
+}
+
+The backend maps and processes the submitted fields according to the selected industry configuration.
+
+📁 Project Structure
+
+Leak-Point-Finder/
 │
 ├── backend/
+│   │
 │   ├── data/
 │   │   ├── industries/
 │   │   │   ├── textile.json
@@ -165,6 +833,7 @@ carbon-hotspot-intelligence/
 │   │   └── recommendations.json
 │   │
 │   ├── src/
+│   │   │
 │   │   ├── agents/
 │   │   │   ├── data_agent.py
 │   │   │   ├── field_mapper.py
@@ -176,18 +845,15 @@ carbon-hotspot-intelligence/
 │   │   ├── analyzer.py
 │   │   ├── carbon_engine.py
 │   │   ├── hotspot_detector.py
-│   │   ├── frontend_adapter.py
-│   │   ├── cost_engine.py
-│   │   ├── country_db.py
-│   │   ├── scenario_builder.py
-│   │   ├── llm_narrative_agent.py
 │   │   └── main.py
 │   │
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── ...
 │
 ├── backend_backup/
 │
 ├── public/
+│
 ├── src/
 │   ├── app/
 │   ├── components/
@@ -198,1159 +864,368 @@ carbon-hotspot-intelligence/
 ├── package-lock.json
 ├── next.config.ts
 ├── tsconfig.json
+├── tailwind.config.ts
 └── README.md
 
-3. Install Frontend Dependencies
-
-From the project root:
-
-npm install
-
-The frontend is built with:
-
-Next.js
-
-React
-
-TypeScript
-
-Recharts
-
-Lucide React
-
-Tailwind CSS
-
-4. Set Up Backend
-
-Open a second terminal:
-
-cd backend
-
-Create a virtual environment.
-
-macOS / Linux
-
-python3 -m venv .venv
-source .venv/bin/activate
-
-Windows PowerShell
-
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-5. Start Backend
-
-Inside backend/:
-
-uvicorn src.main:app --reload --port 8000
-
-Backend:
-
-http://127.0.0.1:8000
-
-Health check:
-
-http://127.0.0.1:8000/health
-
-Swagger API documentation:
-
-http://127.0.0.1:8000/docs
-
-6. Start Frontend
-
-Open another terminal and return to the project root:
-
-cd carbon-hotspot-intelligence
-
-Run:
-
-npm run dev
-
-Open:
-
-http://localhost:3000
-
-7. Local Architecture
-
-Terminal 1
-└── backend/
-    └── uvicorn src.main:app --reload --port 8000
-
-Terminal 2
-└── project root/
-    └── npm run dev
-
-Browser:
-
-http://localhost:3000
-
-🧠 PART 2 — COMPLETE SYSTEM EXPLANATION
-
-8. Overall System Architecture
-
-                         FACTORY / SME
-                              │
-                              ▼
-                  ┌─────────────────────────┐
-                  │     DATA INPUT FORM     │
-                  │ Energy • Materials      │
-                  │ Waste • Water • Fuel    │
-                  │ Production • Logistics  │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │    FRONTEND ADAPTER      │
-                  │ Display Units →          │
-                  │ Canonical Units         │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │       DATA AGENT         │
-                  │                         │
-                  │ Field Mapping           │
-                  │ Unit Normalization      │
-                  │ Validation              │
-                  │ Confidence              │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │     CARBON ENGINE        │
-                  │                         │
-                  │ Activity × Factor      │
-                  │ Source-level CO₂e      │
-                  │ Total Facility CO₂e    │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │    HOTSPOT DETECTOR      │
-                  │                         │
-                  │ Rank actual emissions   │
-                  │ Primary hotspot         │
-                  │ Secondary hotspot       │
-                  └────────────┬────────────┘
-                               │
-                 ┌─────────────┴──────────────┐
-                 ▼                            ▼
-      ┌─────────────────────┐      ┌─────────────────────┐
-      │ RECOMMENDATION      │      │ COST & IMPACT       │
-      │ ENGINE              │      │ ENGINE              │
-      │                     │      │                     │
-      │ Circular actions    │      │ Cost                │
-      │ Material changes    │      │ Savings             │
-      │ Recycling loops     │      │ CO₂ reduction       │
-      │ Process changes     │      │ Payback / ROI       │
-      └──────────┬──────────┘      └──────────┬──────────┘
-                 └─────────────┬─────────────┘
-                               ▼
-                  ┌─────────────────────────┐
-                  │    SCENARIO BUILDER      │
-                  │                         │
-                  │ Quick Wins              │
-                  │ Balanced                │
-                  │ Maximum Reduction       │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │    AI NARRATIVE LAYER    │
-                  │                         │
-                  │ Executive Summary       │
-                  │ Cause Analysis          │
-                  │ Methodology              │
-                  │ Risk Guidance            │
-                  └────────────┬────────────┘
-                               │
-                               ▼
-                  ┌─────────────────────────┐
-                  │      DASHBOARD           │
-                  │                         │
-                  │ Carbon Footprint        │
-                  │ Hotspots                │
-                  │ Recommendations        │
-                  │ Cost & Savings          │
-                  │ Scenarios               │
-                  └─────────────────────────┘
-
-9. Frontend
-
-The frontend provides an interactive assessment experience.
-
-The user can enter:
-
-Facility Information
-
-Facility name
-
-Location
-
-Country
-
-Reporting period
-
-Industry
-
-Production Information
-
-Annual production
-
-Production unit
-
-Operating hours
-
-Industrial Activity Data
-
-Depending on the selected industry:
-
-Electricity
-
-Fuels
-
-Raw materials
-
-Chemicals
-
-Water
-
-Wastewater
-
-Waste
-
-Transportation
-
-Other process inputs
-
-The frontend sends the assessment to:
-
-POST /api/analyze
-
-The existing UI remains focused on presentation while the backend performs the intelligence.
-
-10. Data Agent
-
-The Data Agent ensures that factory data is clean before carbon calculations begin.
-
-Pipeline:
-
-RAW FACTORY DATA
-       ↓
-FIELD MAPPING
-       ↓
-UNIT NORMALIZATION
-       ↓
-VALIDATION
-       ↓
-CONFIDENCE SCORE
-       ↓
-STANDARDIZED DATA
-
-Field Mapping
-
-Example:
-
-grid_electricity
-        ↓
-electricity_kwh
-
-diesel_fuel
-        ↓
-diesel_litres
-
-natural_gas
-        ↓
-natural_gas_m3
-
-polyester_fibre
-        ↓
-polyester_kg
-
-raw_cotton
-        ↓
-cotton_kg
-
-This allows the frontend and backend to use different naming conventions without breaking the calculation engine.
-
-11. Unit Normalization
-
-Industrial data may be entered using different units.
-
-The system converts display-friendly units into canonical calculation units.
-
-Examples:
-
-MWh → kWh
-tonnes → kg
-kL → litres
-1,000 m³ → m³
-10,000 tonne-km → tonne-km
-
-Example:
-
-5,500 tonnes polyester
-          ↓
-5,500,000 kg
-
-This prevents unit differences from creating incorrect carbon calculations.
-
-12. Industry-Aware Validation
-
-The backend supports multiple industrial sectors.
-
-textile
-steel
-food
-cement
-chemical
-
-Each industry has its own configuration:
-
-backend/data/industries/
-
-The validator checks:
-
-Whether the industry is supported
-
-Expected activity fields
-
-Missing fields
-
-Unexpected fields
-
-Numeric values
-
-Negative values
-
-Invalid values
-
-Extremely unusual values
-
-Data completeness
-
-13. Confidence Assessment
-
-The system provides a transparent data-quality confidence score.
-
-It considers:
-
-Data completeness
-+
-Validation warnings
-+
-Validation errors
-
-Output levels:
-
-HIGH
-MEDIUM
-PRELIMINARY
-
-This tells the user how complete and clean the submitted activity data is.
-
-Confidence is a data-quality indicator, not a scientifically validated probability.
-
-14. Carbon Calculation Engine
-
-The Carbon Engine is responsible for the actual footprint calculation.
-
-It combines:
-
-Industry Configuration
-          +
-Emission Factor Database
-          ↓
-Source-Level Emissions
-          ↓
-Total Carbon Footprint
-
-The core formula is:
-
-CO₂e = Activity × Emission Factor
-
-For example:
-
-Electricity Consumption
-        ×
-Grid Emission Factor
-        =
-Electricity CO₂e
-
-The same process is repeated for every configured emission source.
-
-15. Emission Factor Database
-
-Stored in:
-
-backend/data/emission_factors.json
-
-Each factor can contain:
-
-name
-category
-unit
-co2e_per_unit
-scope
-geography
-source
-source_year
-factor_status
-
-The factor library is separate from the calculation code so that factors can be updated without redesigning the Carbon Engine.
-
-Some prototype factors are marked:
-
-illustrative_demo
-
-These are intended for hackathon demonstration and should be validated before formal carbon accounting.
-
-16. Emission Scopes
-
-The platform groups emissions into:
-
-Scope 1
-
-Direct emissions from sources such as fuel combustion and applicable process emissions.
-
-Scope 2
-
-Purchased electricity / grid-related emissions.
-
-Scope 3
-
-Indirect value-chain emissions such as:
-
-Raw materials
-
-Logistics
-
-Waste
-
-Water
-
-Other upstream/downstream activities
-
-17. 🔥 Emission Hotspot Detection
-
-This is the central intelligence of the project.
-
-The system does not assume that electricity is always the largest source.
-
-Instead:
-
-Calculate all sources
-        ↓
-Calculate CO₂e for each source
-        ↓
-Calculate contribution %
-        ↓
-Sort by actual emissions
-        ↓
-Highest contributor
-        ↓
-PRIMARY HOTSPOT
-        ↓
-Second-highest contributor
-        ↓
-SECONDARY HOTSPOT
-
-The contribution formula is:
-
-Contribution %
-=
-(Source CO₂e / Total CO₂e) × 100
-
-This means:
-
-Factory A
-→ Electricity may be the hotspot
-
-Factory B
-→ Polyester may be the hotspot
-
-Factory C
-→ Fuel may be the hotspot
-
-Factory D
-→ Waste or another process source may be the hotspot
-
-The hotspot is determined from actual factory data.
-
-18. Why Hotspot Detection Matters
-
-A total carbon footprint alone is not enough.
-
-Consider:
-
-Factory Carbon Footprint
-= 70,000 tCO₂e
-
-That number tells us the size of the problem.
-
-But hotspot detection tells us:
-
-40% → Electricity
-25% → Polyester
-15% → Natural Gas
-10% → Transport
-10% → Other
-
-Now the factory knows where to focus.
-
-This converts:
-
-CARBON ACCOUNTING
-
-into:
-
-CARBON INTELLIGENCE
-
-19. ♻️ Circular Alternative Recommendation Engine
-
-Once the hotspot is identified, the system asks:
-
-What circular intervention can address this emission source?
-
-Pipeline:
-
-Industry
-   +
-Hotspot
-   ↓
-Recommendation Knowledge Base
-   ↓
-Candidate Actions
-   ↓
-Feasibility Ranking
-   ↓
-Circular Alternatives
-
-Stored in:
-
-backend/data/recommendations.json
-
-Examples:
-
-Purchased Electricity
-        ↓
-Energy efficiency
-Renewable electricity
-Process optimization
-
-Polyester / Synthetic Fibre
-        ↓
-Recycled fibre
-Material substitution
-Circular material sourcing
-
-Textile Waste
-        ↓
-Waste recovery
-Recycling loops
-Material reuse
-
-The recommendation layer focuses on practical interventions rather than simply displaying generic sustainability advice.
-
-20. Circular Carbon Ecosystem
-
-The project directly connects carbon reduction with circularity.
-
-The objective is not only:
-
-REDUCE EMISSIONS
-
-but also:
-
-REDUCE EMISSIONS
-        +
-KEEP MATERIALS IN USE
-        +
-REDUCE VIRGIN RESOURCE DEMAND
-        +
-REDUCE WASTE
-        +
-CREATE PRACTICAL INDUSTRIAL LOOPS
-
-Examples include:
-
-Alternative materials
-
-Recycled materials
-
-Waste recovery
-
-Closed-loop processes
-
-Process efficiency
-
-Resource recovery
-
-Better logistics
-
-Energy optimization
-
-This is the core connection between the carbon hotspot detector and the Circular Carbon Ecosystem theme.
-
-21. 💰 Cost & CO₂ Savings
-
-A recommendation becomes much more useful when the business can understand its financial impact.
-
-The Cost Engine can estimate:
-
-CAPEX
-
-OPEX
-
-Annual savings
-
-CO₂ reduction
-
-Payback period
-
-ROI
-
-Local currency values
-
-Implementation difficulty
-
-Capital level
-
-Conceptually:
-
-HOTSPOT
-   +
-RECOMMENDATION
-   +
-FACTORY SCALE
-   +
-COUNTRY
-   ↓
-COST + IMPACT ESTIMATE
-
-This allows the decision-maker to compare environmental impact with financial feasibility.
-
-22. 🌍 Country-Aware Analysis
-
-Financial and carbon assumptions can vary by geography.
-
-The country database can provide:
-
-Grid electricity factors
-
-Electricity tariff
-
-Natural gas price
-
-Diesel price
-
-Coal price
-
-Currency
-
-Currency conversion
-
-Regional CAPEX multiplier
-
-Carbon price/tax assumptions
-
-Supported examples:
-
-India
-USA
-Germany / EU
-UK
-China
-Japan
-Global Default
-
-This helps the same intervention produce a more relevant estimate for different regions.
-
-23. 📊 Decarbonization Scenarios
-
-Instead of giving the factory a large list of recommendations, the Scenario Builder groups actions into pathways.
-
-🟢 Basic / Quick Wins
-
-Focuses on:
-
-Low-capital actions
-
-Operational improvements
-
-Easy implementation
-
-Fast opportunities
-
-🔵 Balanced Modernization
-
-Combines:
-
-Quick wins
-
-Medium-term upgrades
-
-Moderate investment
-
-Stronger emission reduction
-
-🔴 Maximum Reduction
-
-Focuses on:
-
-More aggressive actions
-
-Higher transformation
-
-Larger reduction potential
-
-Broader intervention
-
-Scenarios can compare:
-
-Actions
-CAPEX
-OPEX
-Annual Savings
-CO₂ Reduction
-Remaining Emissions
-Reduction %
-Payback
-Currency Impact
-
-24. 🤖 AI Narrative Layer
-
-AI is used mainly where natural-language reasoning adds value.
-
-The system can generate:
-
-Executive Summary
-Cause Analysis
-Methodology Notes
-Risk Guidance
-
-The important design principle is:
-
-DETERMINISTIC CALCULATION
-          ↓
-CALCULATED RESULTS
-          ↓
-AI EXPLANATION
-
-The LLM does not replace the core carbon mathematics.
-
-If the Gemini API is unavailable, deterministic fallback text can still be used.
-
-25. Main API
-
-Health Check
-
-GET /health
-
-Example:
-
-http://127.0.0.1:8000/health
-
-Main Analysis
-
-POST /api/analyze
-
-The analysis endpoint connects the frontend with the complete intelligence pipeline.
-
-Conceptually:
-
-Frontend Payload
-      ↓
-Unit Adapter
-      ↓
-Data Agent
-      ↓
-Carbon Engine
-      ↓
-Hotspot Detector
-      ↓
-Recommendation Engine
-      ↓
-Cost Engine
-      ↓
-Scenario Builder
-      ↓
-AI Narrative
-      ↓
-Frontend Result
-
-26. Example Textile Assessment
-
-Example frontend payload:
-
-{
-  "country": "india",
-  "facilityName": "Example Textile Facility",
-  "facilityLocation": "Gujarat, India",
-  "reportingPeriod": "FY 2025-26",
-  "industry": "textile",
-  "annual_production": 12000,
-  "operating_hours": 7200,
-  "grid_electricity": 24000,
-  "natural_gas": 1800,
-  "diesel_fuel": 120,
-  "polyester_fibre": 5500,
-  "raw_cotton": 7000,
-  "dyes_chemicals": 450,
-  "process_water": 950,
-  "compressed_air": 3200,
-  "wastewater_volume": 820,
-  "textile_waste_landfill": 620,
-  "recycled_fibre_used": 800,
-  "inbound_logistics": 240,
-  "outbound_distribution": 380
-}
-
-The backend adapts the frontend's display units before performing the calculation.
-
-27. Repository Responsibility Map
+🧩 Backend Components
 
 Component
 
 Responsibility
 
-Next.js Frontend
+data_agent.py
 
-User interface and dashboard
+Orchestrates the data preparation pipeline
 
-assessmentService.ts
+field_mapper.py
 
-Assessment/API integration
+Maps frontend/user fields to canonical backend fields
 
-frontend_adapter.py
+unit_normalizer.py
 
-Frontend unit conversion
+Converts supported values into standard units
 
-Data Agent
+validator.py
 
-Mapping, normalization, validation
+Performs industry-aware validation
 
-Carbon Engine
+confidence.py
 
-CO₂e calculations
+Calculates data confidence
 
-Hotspot Detector
+carbon_engine.py
 
-Dynamic hotspot identification
+Calculates source and total emissions
 
-Recommendation Engine
+analyzer.py
 
-Circular alternative recommendations
+Combines the carbon-analysis pipeline
 
-Country DB
+hotspot_detector.py
 
-Geographic assumptions
+Ranks actual emission sources
 
-Cost Engine
+recommendation_engine.py
 
-Cost, savings, ROI, payback
+Generates and ranks recommendation candidates
 
-Scenario Builder
+main.py
 
-Decarbonization pathways
+FastAPI application and API endpoints
 
-LLM Narrative
+🗃️ Data Files
 
-AI-generated explanation
+Industry Configurations
 
-Industry JSON
+Industry-specific emission sources are defined under:
 
-Industry activity configuration
+backend/data/industries/
+
+Each configuration describes the sources that are relevant to that industry.
 
 Emission Factors
 
-Carbon calculation factors
+Emission factors are stored in:
 
-Recommendations JSON
+backend/data/emission_factors.json
 
-Circular intervention knowledge
+Keeping emission factors outside the Python calculation logic makes the system easier to maintain and update.
 
-28. Why This Solution Is Different
+Recommendations
 
-1. It does not stop at the carbon number
+The recommendation knowledge base is stored in:
 
-Carbon Footprint
-      ↓
-Hotspot
-      ↓
-Action
+backend/data/recommendations.json
 
-2. Hotspots are dynamic
+The Recommendation Engine uses the industry and detected hotspot to identify suitable intervention candidates.
 
-The system identifies hotspots from actual calculated emissions rather than hardcoding a particular source.
+🧮 Calculation Method
 
-3. Recommendations are connected to the hotspot
+The fundamental calculation is:
 
-The system does not give random sustainability suggestions.
+Emission = Activity Data × Emission Factor
 
-Actual Hotspot
-      ↓
-Relevant Intervention
+For example:
 
-4. Circularity is included
+Grid Electricity
+       ×
+Grid Emission Factor
+       =
+Electricity Emissions
 
-The solution connects emission reduction with:
+All configured emission sources are then aggregated to determine the total facility footprint.
 
-Recycling
+The contribution of a source is:
 
-Reuse
+Source Contribution %
+=
+Source Emissions / Total Facility Emissions × 100
 
-Material substitution
+The sources are sorted using their actual calculated emissions.
 
-Resource recovery
+The largest contributors become the primary and secondary hotspots.
 
-Closed-loop thinking
+🧠 Why Hotspot Detection Matters
 
-5. Financial impact is included
+A total carbon footprint does not necessarily tell a factory where it should start.
 
-The user can compare:
+For example, two facilities could have the same total footprint but very different emission structures.
 
-CO₂ Reduction
-+
-Investment
-+
-Savings
-+
-Payback
+Factory A
 
-6. AI is used where it helps
+Electricity → 70%
+Materials   → 15%
+Fuel        → 10%
+Other       → 5%
 
-The LLM is primarily used for explanation and synthesis while deterministic code handles the numerical calculations.
+Factory B
 
-29. Impact
+Materials   → 60%
+Fuel        → 25%
+Electricity → 10%
+Other       → 5%
 
-The proposed system directly addresses the impact areas of the problem statement.
+The correct decarbonization strategy for each factory would therefore be different.
 
-Makes emission sources visible
+The hotspot detector helps identify these differences.
 
-SMEs can see which activities contribute most to their carbon footprint.
+🛠️ Technology Stack
 
-Makes emissions actionable
+Frontend
 
-Instead of only reporting emissions, the platform connects hotspots to practical interventions.
+Next.js
+React
+TypeScript
+Tailwind CSS
+Recharts
+Lucide React
 
-Encourages circular practices
+Backend
 
-Recommendations can include:
+Python
+FastAPI
+Uvicorn
 
-Alternative materials
+Data Layer
 
-Recycling loops
+JSON Industry Configurations
+JSON Emission Factors
+JSON Recommendation Knowledge Base
 
-Process changes
+Intelligence Layer
 
-Waste recovery
+Data Validation
+Field Mapping
+Unit Normalization
+Confidence Scoring
+Carbon Calculation
+Hotspot Ranking
+Recommendation Ranking
 
-Resource efficiency
+🔐 Separation of Responsibilities
 
-Adds financial context
+The project separates the user interface from the analytical backend.
 
-Businesses can understand estimated:
+Frontend
 
-Cost
+Responsible for:
 
-Savings
+User interaction
 
-CO₂ reduction
+Data collection
 
-Payback
+Forms
 
-Supports better carbon decision-making
+Dashboards
 
-The system gives factory operators and sustainability teams a structured path from data to action.
+Charts
 
-30. Prototype & Data Disclaimer
+Result presentation
 
-This is a hackathon prototype and decision-support system.
+Backend
 
-It is not a replacement for:
+Responsible for:
 
-Certified carbon accounting
+Data processing
 
-Third-party verification
+Field mapping
 
-Formal regulatory reporting
+Unit normalization
 
-Audited sustainability disclosures
+Validation
 
-Investment-grade engineering studies
+Carbon calculations
 
-Vendor quotations
+Hotspot detection
 
-Some prototype emission factors may be marked:
+Recommendation generation
 
-illustrative_demo
+This separation allows the analytical logic to remain centralized instead of duplicating the carbon calculation logic across the frontend.
 
-Before production deployment or formal reporting, factors should be validated using appropriate:
+🧪 Testing the Backend
 
-Geographic data
+The backend API can be tested using the interactive FastAPI documentation.
 
-Process-specific lifecycle data
+Start the backend:
 
-Supplier information
+cd backend
+source .venv/bin/activate
+uvicorn src.main:app --reload --port 8000
 
-Treatment-route data
+Then open:
 
-Fuel-specific factors
+http://127.0.0.1:8000/docs
 
-Current tariff/currency assumptions
+Use:
 
-Accounting boundaries
+POST /api/analyze
 
-Data-quality controls
+to submit a test assessment.
 
-Financial values are estimates for decision support and should not be treated as guaranteed investment returns.
+You can also check:
 
-31. Future Scope
+GET /health
 
-The platform can be expanded with:
+to verify that the backend is running.
 
-CSV / Excel ingestion
+📈 Future Scope
 
-ERP integration
+The architecture can be extended with:
 
-IoT / sensor data
+Real-time industrial IoT data
+
+Automated meter-data ingestion
+
+Supplier-specific Scope 3 information
+
+Regional emission-factor datasets
 
 Historical carbon tracking
 
-PostgreSQL database
+Scenario comparison
 
-Multi-user organizations
+Facility benchmarking
 
-Supplier-specific emission factors
+Multi-factory portfolio analysis
 
-Automated industry benchmarks
+Automated sustainability reports
 
-Optimization-based action selection
+Advanced AI recommendation ranking
 
-Advanced circularity scoring
+Continuous carbon monitoring
 
-Machine-learned recommendation ranking
+Enterprise sustainability-platform integration
 
-More detailed Scope 1 / 2 / 3 accounting
+🌱 Circular Carbon Ecosystem
 
-Production-grade authentication
+The project is designed around the idea that industrial carbon reduction can be connected with circular resource use.
 
-Cloud deployment
+The intended chain is:
 
-Monitoring and observability
-
-Advanced AI reporting
-
-32. Recommended Demo Flow
-
-For a hackathon demonstration:
-
-1. Select Industry
+Industrial Activity
         ↓
-2. Enter Factory Data
+Resource Consumption
         ↓
-3. Submit Assessment
+Carbon Impact
         ↓
-4. Show Total Carbon Footprint
+Emission Hotspot
         ↓
-5. Show Primary Hotspot
+Circular Opportunity
         ↓
-6. Show Secondary Hotspot
+Potential Reduction
         ↓
-7. Explain WHY it is a hotspot
-        ↓
-8. Show Circular Alternatives
-        ↓
-9. Show CO₂ Savings
-        ↓
-10. Show Cost + Payback
-        ↓
-11. Compare Scenarios
-        ↓
-12. Show AI Executive Summary
+Industrial Action
 
-This demonstrates the full problem-to-solution journey.
+Examples include:
 
-33. HackOut 2026
+Waste Reduction
+      +
+Material Recovery
+      +
+Lower Virgin Material Demand
+      +
+Lower Supply-Chain Emissions
 
-Event: HackOut 2026
+or:
 
-Theme: 🌱 Circular Carbon Ecosystem
+Energy Efficiency
+      +
+Heat Recovery
+      +
+Lower Fuel Consumption
+      +
+Lower Carbon Emissions
 
-Problem Statement:
-Industrial Emission Leak-Point Detector & Circular Alternative Recommender
+The platform therefore attempts to connect carbon accounting with practical circular interventions.
 
-Target Users:
+🎯 Project Objective
 
-SMEs
+The objective of the project is to make industrial carbon analysis:
 
-Factory operators
+Understandable
+       +
+Data-Driven
+       +
+Hotspot-Focused
+       +
+Action-Oriented
+       +
+Circular
 
-Sustainability consultants
+Instead of giving a factory only:
 
-Industry regulators
+Total Carbon Footprint
 
-Core Technology:
+the system aims to provide:
 
-AI / Data Intelligence
-+
-Carbon Calculation
-+
-Data Visualization
-+
-REST API
-+
-Circular Recommendation
-+
-Financial Impact Analysis
+How much carbon?
+       ↓
+Where is it coming from?
+       ↓
+Which source is the biggest hotspot?
+       ↓
+What is the secondary hotspot?
+       ↓
+What actions can be considered?
+       ↓
+What could the potential impact be?
 
-🌱 FINAL IDEA
+🏆 Hackathon Context
 
-The central idea of this project is:
+Theme
 
-Help an industrial business move from “I know my emissions” to “I know where they come from, what I can change, which circular alternative is practical, how much carbon I can save, and what it may cost.”
+Circular Carbon Ecosystem
 
-The complete journey is:
+Project
 
-                    INDUSTRIAL DATA
-                           ↓
-                    DATA VALIDATION
-                           ↓
-                    CARBON FOOTPRINT
-                           ↓
-                    LEAK-POINT DETECTION
-                           ↓
-                  PRIMARY + SECONDARY
-                       HOTSPOTS
-                           ↓
-                 CIRCULAR ALTERNATIVES
-                           ↓
-                  COST + CO₂ SAVINGS
-                           ↓
-                 DECARBONIZATION
-                     SCENARIOS
-                           ↓
-                    AI EXPLANATION
-                           ↓
-                  ACTIONABLE DECISION
+Industrial Carbon Hotspot Intelligence System
 
-Measure → Detect → Explain → Recommend → Quantify → Act 🌱⚙️
+Core Idea
 
-👥 Hackathon Project
+Identify industrial emission hotspots from operational data and connect those hotspots with practical circular alternatives and impact-oriented recommendations.
 
-Built as a collaborative hackathon project representing:
+👥 Team
+
+Team SVIT
+
+Developed as a hackathon project representing:
 
 Sardar Vallabhbhai Patel Institute of Technology (SVIT)
 
-Theme: Circular Carbon Ecosystem
+⚠️ Prototype Disclaimer
 
-Problem: Industrial Emission Leak-Point Detector & Circular Alternative Recommender
+This project is a hackathon prototype.
 
-Implementation: Industrial Carbon Hotspot Intelligence System
+Emission factors, recommendation estimates, cost estimates and potential impact values should be treated according to their configured source/status and should be independently verified against appropriate authoritative datasets before being used for formal regulatory reporting, compliance, investment decisions or operational commitments.
 
-Technology: Next.js · React · TypeScript · FastAPI · Python · JSON · Recharts · Optional Gemini AI
+📜 License
+
+This repository is intended for hackathon and prototype development purposes.
+
+⭐ Final Message
+
+The vision of the project is simple:
+
+Measure → Detect → Understand → Act → Circularize
+
+🌱 Industrial Carbon Hotspot Intelligence System
