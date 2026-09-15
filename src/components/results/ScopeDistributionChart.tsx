@@ -21,6 +21,36 @@ export interface ScopeDistributionChartProps {
   };
 }
 
+interface TooltipPayloadItem {
+  payload: {
+    name: string;
+    value: number;
+    percentage: number;
+    color: string;
+  };
+}
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayloadItem[];
+}
+
+function CustomTooltip({ active, payload }: CustomTooltipProps) {
+  if (active && payload && payload.length) {
+    const item = payload[0].payload;
+    return (
+      <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-lg text-xs space-y-1">
+        <p className="font-bold text-slate-900">{item.name}</p>
+        <div className="flex items-center justify-between gap-4 pt-1 font-mono">
+          <span className="text-slate-600">{formatEmissions(item.value)}</span>
+          <span className="font-bold text-emerald-700">{formatPercent(item.percentage)}</span>
+        </div>
+      </div>
+    );
+  }
+  return null;
+}
+
 export function ScopeDistributionChart({
   scopeBreakdown,
 }: ScopeDistributionChartProps) {
@@ -28,38 +58,22 @@ export function ScopeDistributionChart({
     {
       name: "Scope 1 (Direct Fuels & Calcination)",
       value: scopeBreakdown.scope1.tCO2e,
-      percentage: Number(scopeBreakdown.scope1.percentage).toFixed(1),
+      percentage: Number(scopeBreakdown.scope1.percentage),
       color: "#2563eb", // Blue
     },
     {
       name: "Scope 2 (Purchased Electricity & Steam)",
       value: scopeBreakdown.scope2.tCO2e,
-      percentage: Number(scopeBreakdown.scope2.percentage).toFixed(1),
+      percentage: Number(scopeBreakdown.scope2.percentage),
       color: "#9333ea", // Purple
     },
     {
       name: "Scope 3 (Upstream Feedstocks & Logistics)",
       value: scopeBreakdown.scope3.tCO2e,
-      percentage: Number(scopeBreakdown.scope3.percentage).toFixed(1),
+      percentage: Number(scopeBreakdown.scope3.percentage),
       color: "#d97706", // Amber
     },
   ];
-
-  const CustomTooltip = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const item = payload[0].payload;
-      return (
-        <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-lg text-xs space-y-1">
-          <p className="font-bold text-slate-900">{item.name}</p>
-          <div className="flex items-center justify-between gap-4 pt-1 font-mono">
-            <span className="text-slate-600">{formatEmissions(item.value)}</span>
-            <span className="font-bold text-emerald-700">{formatPercent(item.percentage)}</span>
-          </div>
-        </div>
-      );
-    }
-    return null;
-  };
 
   return (
     <ChartContainer
